@@ -1,4 +1,4 @@
-package webhook.app;
+package Zwayam;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import Zwayam.WebhookResponse;
 
 @Controller
 @RequestMapping("/webAPI")
@@ -25,9 +28,13 @@ public class WebhookController {
 		}
 		return "Java Developer";
 	}
-	@RequestMapping(value = "/WsJobTitleGet", method = RequestMethod.GET)
-	public @ResponseBody String WsJobTitleGet() {
-		return "Java Developer";
-	}
+
+    @RequestMapping(method = RequestMethod.POST)
+    public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
+
+        System.out.println(obj);
+
+        return new WebhookResponse();
+    }
 	
 }
