@@ -7,7 +7,7 @@ public class WebhookResponse {
     private final String source = "java-webhook";
 
     public WebhookResponse(String obj) {
-        this.speech = "Hi";
+        this.speech = "Java Developer";
         this.displayText = "May I help you?";
     }
 
