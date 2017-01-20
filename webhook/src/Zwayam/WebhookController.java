@@ -20,12 +20,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import Zwayam.WebhookResponse;
 
 @Controller
-@RequestMapping("/webAPI")
+@RequestMapping("/webhook")
 public class WebhookController {
 
 	static final Logger logger = Logger.getLogger(WebhookController.class);
 	
-	@RequestMapping(value = "/WsJobTitlePost", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	/*@RequestMapping(value = "/WsJobTitlePost", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody String  WsJobTitlePost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		Enumeration en = request.getParameterNames();
 		String data = null;
@@ -33,7 +33,7 @@ public class WebhookController {
 			data = (String) en.nextElement();
 		}
 		return "Java Developer";
-	}
+	}*/
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonProcessingException{
