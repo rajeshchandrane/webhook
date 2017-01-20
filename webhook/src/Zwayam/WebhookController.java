@@ -39,10 +39,14 @@ public class WebhookController {
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonProcessingException{
     	ObjectMapper mapperObj = new ObjectMapper();
     	
-    	logger.info("Enter into post method"+obj);
+    	logger.info("Enter into post method"+obj.toString());
         System.out.println(obj);
-        logger.info(mapperObj.writeValueAsString(new WebhookResponse()));
-        return new WebhookResponse();
+       
+        //WebhookResponse request = (WebhookResponse) mapperObj.writeValueAsString(new WebhookResponse());
+        
+      //  logger.info(mapperObj.writeValueAsString(new WebhookResponse()));
+        return new WebhookResponse("Hello! " + obj, "Text " + obj);
+       
     }
 	
 }
