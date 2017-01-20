@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import Zwayam.WebhookResponse;
-import zwayam.common.rg.controller.GenericMailerController;
 
 @Controller
 @RequestMapping("/webAPI")
@@ -36,7 +36,7 @@ public class WebhookController {
 	}
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
+    public @ResponseBody WebhookResponse webhook(@RequestBody String obj) throws JsonProcessingException{
     	ObjectMapper mapperObj = new ObjectMapper();
     	
     	logger.info("Enter into post method"+obj);
