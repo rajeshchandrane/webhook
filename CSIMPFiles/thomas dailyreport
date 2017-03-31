@@ -1,0 +1,30 @@
+select c.company_name,j.job_title,ja.first_name,SUBSTRING_INDEX(a.tag_name, '-Tag', 1) as tag_name,a.tag_value,a.added_on from c3_company c,c3_job j,c3_job_application ja,c3_application_notes a where c.id = j.company_id and j.id = ja.job_id and ja.id = a.applicant_id and CAST(a.added_on AS DATE) = CURRENT_DATE; 
+
+
+{
+"queries":[{
+"name":"dailyreportdetails",
+"from":"c3_company c,c3_job j,c3_job_application ja,c3_application_notes a",
+"fields":"c.company_name,j.job_title,ja.first_name,SUBSTRING_INDEX(a.tag_name, '-Tag', 1) as tag_name,a.tag_value,a.added_on",
+"condition":"where c.id = j.company_id and j.id = ja.job_id and ja.id = a.applicant_id and CAST(a.added_on AS DATE) = CURRENT_DATE"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = 'zwayam_DailyScoreReport_Emails'"
+}]
+}
+
+INSERT INTO `reportgenerator`.`rg_generic_queries` (`id`, `alertFrequency`, `executionTime`, `lastExecuted`, `mailSubject`, `nextExecution`, `query`, `queryType`, `templateName`, `entityQuery`, `fromEmail`, `replyToEmail`, `username`, `password`, `hostName`, `protocol`, `port`) VALUES (NULL, 'Daily', '07:00:00', '2017-02-22 07:00:00', 'Zwayam | Daily Applies Status', '2017-02-23 07:00:00', '{
+"queries":[{
+"name":"dailyreportdetails",
+"from":"c3_company c,c3_job j,c3_job_application ja,c3_application_notes a",
+"fields":"c.company_name,j.job_title,ja.first_name,SUBSTRING_INDEX(a.tag_name, ''-Tag'', 1) as tag_name,a.tag_value,a.added_on",
+"condition":"where c.id = j.company_id and j.id = ja.job_id and ja.id = a.applicant_id and CAST(a.added_on AS DATE) = CURRENT_DATE"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = ''zwayam_DailyApplyReport_Emails''"
+}]
+}', 'Scheduled', 'dailyAppliesStatusReport', NULL, 'hello@zwayam.com', 'hello@zwayam.com', 'hello@zwayam.com', 'Yuwu8898', 'smtp.office365.com', 'smtp', '587');

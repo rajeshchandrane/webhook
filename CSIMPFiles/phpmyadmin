@@ -1,0 +1,63 @@
+<select id="tablefields" name="dummy" size="13" multiple="multiple" ondblclick="insertValueQuery()">
+<option value="`id`" title="">id</option>
+<option value="`alertFrequency`" title="">alertFrequency</option>
+<option value="`executionTime`" title="">executionTime</option>
+<option value="`lastExecuted`" title="">lastExecuted</option>
+<option value="`mailSubject`" title="">mailSubject</option>
+<option value="`nextExecution`" title="">nextExecution</option>
+<option value="`query`" title="">query</option>
+<option value="`queryType`" title="">queryType</option>
+<option value="`templateName`" title="">templateName</option>
+<option value="`entityQuery`" title="">entityQuery</option>
+<option value="`fromEmail`" title="">fromEmail</option>
+<option value="`replyToEmail`" title="">replyToEmail</option>
+<option value="`username`" title="">username</option>
+<option value="`password`" title="">password</option>
+<option value="`hostName`" title="">hostName</option>
+<option value="`protocol`" title="">protocol</option>
+<option value="`port`" title="">port</option>
+</select>
+function insertValueQuery()
+{
+    var myQuery = document.sqlform.sql_query;
+    var myListBox = document.sqlform.dummy;
+
+    if (myListBox.options.length > 0) {
+        sql_box_locked = true;
+        var chaineAj = "";
+        var NbSelect = 0;
+        for (var i=0; i<myListBox.options.length; i++) {
+            if (myListBox.options[i].selected) {
+                NbSelect++;
+                if (NbSelect > 1) {
+                    chaineAj += ", ";
+                }
+                chaineAj += myListBox.options[i].value;
+            }
+        }
+
+        /* CodeMirror support */
+        if (codemirror_editor) {
+            codemirror_editor.replaceSelection(chaineAj);
+        //IE support
+        } else if (document.selection) {
+            myQuery.focus();
+            var sel = document.selection.createRange();
+            sel.text = chaineAj;
+            document.sqlform.insert.focus();
+        }
+        //MOZILLA/NETSCAPE support
+        else if (document.sqlform.sql_query.selectionStart || document.sqlform.sql_query.selectionStart == "0") {
+            var startPos = document.sqlform.sql_query.selectionStart;
+            var endPos = document.sqlform.sql_query.selectionEnd;
+            var chaineSql = document.sqlform.sql_query.value;
+
+            myQuery.value = chaineSql.substring(0, startPos) + chaineAj + chaineSql.substring(endPos, chaineSql.length);
+        } else {
+            myQuery.value += chaineAj;
+        }
+        sql_box_locked = false;
+    }
+}
+
+

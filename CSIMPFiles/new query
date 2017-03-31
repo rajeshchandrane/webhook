@@ -1,0 +1,59 @@
+{
+"queries":[{
+"name":"weeklyjobdetails", 
+"from":"c3_job",
+"fields":"job_title AS JobTitle,location,job_url,job_code",
+"condition":"where created_date between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+},
+{
+"name":"weeklycompanydetails",
+"from":"c3_company",
+"fields":"company_name,website,career_site_url",
+"condition":"where date_of_registration between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+},
+{
+"name":"weeklyjobapplications",
+"from":"c3_job_application",
+"fields":"first_name,email_id,job_id,current_status",
+"condition":"where date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+}]
+}
+
+{
+"queries":[{
+"name":"dailyjobapplyreport",
+"from":"c3_job_application",
+"fields":"CAST(date_applied AS DATE) as Date,count(case when source = 'CareerBuilder' then id end) as CareerBuilder,count(case when source = 'CareerSite' then id end) as CareerSite,count(case when source = 'Indeed' then id end) as Indeed,count(case when source = 'Indeed-Sponsored' then id end) as Indeed-Sponsored,count(case when source = 'LinkedIn' then id end) as LinkedIn,count(case when source = 'Others' then id end) as Others,count(case when source = 'Glassdoor' then id end) as Glassdoor,count(case when source = 'RecruiterUpload' then id end) as RecruiterUpload,count(case when source = 'Twitter' then id end) as Twitter,count(case when source = 'DailyHunt' then id end) as DailyHunt,count(case when source = 'EmailInvite' then id end) as EmailInvite,count(case when source = 'EmployeeReferal' then id end) as EmployeeReferal,count(case when source = 'FacebookShare' then id end) as FacebookShare,count(case when source = 'FacebookTab' then id end) as FacebookTab,count(case when source = 'GooglePlus' then id end) as GooglePlus,count(case when source = 'JobRapido' then id end) as JobRapido,count(case when source = 'LinkedInShare' then id end) as LinkedInShare,count(case when source = 'Naukri' then id end) as Naukri,count(case when source = 'RecruiterShare' then id end) as RecruiterShare,count(case when source = 'SimplyHired' then id end) as SimplyHired,count(case when source = 'null' then id end) as null,count(case when source is Null then id end) as Null,count(id) as id",
+"condition":"where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 10 DAY)) AS DATE) and NOW()
+Group by CAST(date_applied AS DATE) Order by date_applied desc"}]
+}
+
+UPDATE `rg_generic_queries` SET  `mailSubject` =  'Zwayam | Daily report - Scoring' WHERE  `rg_generic_queries`.`id` =12;
+UPDATE `rg_generic_queries` SET `query` = '{
+"queries":[{
+"name":"weeklyjobdetails", 
+"from":"c3_job",
+"fields":"job_title AS JobTitle,location,job_url,job_code",
+"condition":"where created_date between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+},
+{
+"name":"weeklycompanydetails",
+"from":"c3_company",
+"fields":"company_name,website,career_site_url",
+"condition":"where date_of_registration between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+},
+{
+"name":"weeklyjobapplications",
+"from":"c3_job_application",
+"fields":"first_name,email_id,job_id,current_status",
+"condition":"where date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()"
+}]
+}' WHERE `rg_generic_queries`.`id` = 11;
+
+INSERT INTO `reportgenerator`.`rg_generic_queries` (`id`, `alertFrequency`, `executionTime`, `lastExecuted`, `mailSubject`, `nextExecution`, `query`, `queryType`, `templateName`, `entityQuery`) VALUES (NULL, 'D', '18:10:00', '2016-11-16', 'Zwayam | Daily Report Job Applies', '2016-11-17', '{
+"queries":[{
+"name":"dailyjobapplyreport",
+"from":"c3_job_application",
+"fields":"CAST(date_applied AS DATE) as Date,count(case when source = ''CareerBuilder'' then id end) as CareerBuilder,count(case when source = ''CareerSite'' then id end) as CareerSite,count(case when source = ''Indeed'' then id end) as Indeed,count(case when source = ''Indeed-Sponsored'' then id end) as Indeed-Sponsored,count(case when source = ''LinkedIn'' then id end) as LinkedIn,count(case when source = ''Others'' then id end) as Others,count(case when source = ''Glassdoor'' then id end) as Glassdoor,count(case when source = ''RecruiterUpload'' then id end) as RecruiterUpload,count(case when source = ''Twitter'' then id end) as Twitter,count(case when source = ''DailyHunt'' then id end) as DailyHunt,count(case when source = ''EmailInvite'' then id end) as EmailInvite,count(case when source = ''EmployeeReferal'' then id end) as EmployeeReferal,count(case when source = ''FacebookShare'' then id end) as FacebookShare,count(case when source = ''FacebookTab'' then id end) as FacebookTab,count(case when source = ''GooglePlus'' then id end) as GooglePlus,count(case when source = ''JobRapido'' then id end) as JobRapido,count(case when source = ''LinkedInShare'' then id end) as LinkedInShare,count(case when source = ''Naukri'' then id end) as Naukri,count(case when source = ''RecruiterShare'' then id end) as RecruiterShare,count(case when source = ''SimplyHired'' then id end) as SimplyHired,count(case when source = ''null'' then id end) as null,count(case when source is Null then id end) as Null,count(id) as id",
+"condition":"where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 10 DAY)) AS DATE) and NOW() Group by CAST(date_applied AS DATE) Order by date_applied desc"}]
+}', 'Scheduled', 'jobAppliesFromSource', NULL);

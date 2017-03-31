@@ -1,0 +1,51 @@
+ALTER TABLE  `c3_query_automation` CHANGE  `starting_date`  `starting_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
+
+ALTER TABLE  `c3_query_automation` CHANGE  `next_execution_time`  `next_execution_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP
+
+UPDATE  `c3_query_automation` SET  `execution_time` =  '10:57:00',
+`next_execution_time` =  '2016-11-10 10:57:00' WHERE  `c3_query_automation`.`id` =1 LIMIT 1
+
+c3_company.date_of_registration >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and c3_company.id = c3_user.company_id and 
+{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_company.career_site_url,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ?"},
+{
+"name":"emails",
+"from":"c3_user",
+"fields":"c3_user.email_id",
+"condition":"where c3_user.company_id = ?"
+}]
+}
+
+
+select CAST(date_applied AS DATE) As Date,
+  count(case when filter_score = -60 then id end) As '-60',
+  count(case when filter_score = -50 then id end) As '-50',
+  count(case when filter_score = -40 then id end) As '-40',
+  count(case when filter_score = -30 then id end) As '-30',
+  count(case when filter_score = -20 then id end) As '-20',
+  count(case when filter_score = -1 then id end) As '-1',
+  count(case when filter_score is null then id end) As 'null',
+  count(case when filter_score = 0 then id end) As '0',
+  count(case when filter_score between 1 and 24 then id end) As '1-24',
+  count(case when filter_score between 25 and 49 then id end) As '25-49',
+  count(case when filter_score between 50 and 74 then id end) As '50-74',
+  count(case when filter_score between 75 and 99 then id end) As '75-99',
+  count(case when filter_score = 100 then id end) As '100',
+  count(id) As Total
+from c3_job_application where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW()
+Group by CAST(date_applied AS DATE) Order by date_applied desc;
+
+
+
+{
+"queries":[{
+"name":"dailyreportdetails",
+"from":"c3_job_application",
+"fields":"CAST(date_applied AS DATE) As Date,count(case when filter_score = -60 then id end) As '-60',count(case when filter_score = -50 then id end) As '-50',count(case when filter_score = -40 then id end) As '-40',count(case when filter_score = -30 then id end) As '-30',count(case when filter_score = -20 then id end) As '-20',count(case when filter_score = -1 then id end) As '-1',count(case when filter_score is null then id end) As 'null',count(case when filter_score = 0 then id end) As '0',count(case when filter_score between 1 and 24 then id end) As '1-24',count(case when filter_score between 25 and 49 then id end) As '25-49',count(case when filter_score between 50 and 74 then id end) As '50-74',count(case when filter_score between 75 and 99 then id end) As '75-99',count(case when filter_score = 100 then id end) As '100',count(id) As Total","condition":"where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW() Group by CAST(date_applied AS DATE) Order by date_applied desc"}]
+}
+
+

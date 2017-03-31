@@ -1,0 +1,209 @@
+<form class="course-finder-form ng-invalid ng-invalid-required ng-invalid-recaptcha ng-dirty" ng-submit="applyJob(form.$valid)" enctype="multipart/form-data" name="form">
+								
+									<div vs-repeat="" class="container apply-custom-container applyjob-container">
+                                      <!-- ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' --><div class="row custom-row-defthm new-in-full ng-scope" ng-if="data.masterApplyFields.fieldName == 'Upload Resume'">
+ 			<div class="col-md-2 col-sm-12 col-xs-12 custom-labl-defthm new-in-full-div">
+ 			<label class="label-text" for="name">Upload Resume&nbsp; 
+ 			<!-- ngIf: data.isMandatory=='Y' --><span style="color: red;margin-left: -9px;" ng-if="data.isMandatory=='Y'" class="ng-scope">*</span><!-- end ngIf: data.isMandatory=='Y' -->
+ 			</label>
+ 			</div>
+ 
+ 				<div class="col-md-8">
+ 					 	<div class="row">
+ 					 		<div class="col-md-12 col-sm-12 col-xs-12">
+ 					 		<span class="input-group-btn" style=" padding-left: 9px;">
+ 							<input type="text" style="float: left;width: 70%;font-size:16px;" size="30" ng-model="fileName" id="filename" name="filename" class="form-control apply-job-formcontrol new-in ng-pristine ng-invalid ng-invalid-required" disabled="" ng-required="data.isMandatory=='Y'" required="required">
+ 							<label for="fileUpload" class="btn btn-theme btn-file  new-in-btn" id="title" style="">Choose file..</label> 										
+ 							<input type="file" name="fileUpload" value="test" style="display: none;" ng-model="file" id="fileUpload" onchange="angular.element(this).scope().setFileName(this);angular.element(this).scope().submitResume();" class="input-group-addon ng-pristine ng-valid">
+ 						</span>
+ 					 	</div>
+ 					 </div>	
+ 					 		 
+                                 
+ 				
+ 						<span class="uploadLimitNote">(File size should be &lt;= 2MB)</span> 
+ 				</div>
+ 
+ 		<div class="col-md-5" style="margin-bottom:-15px;width:41% !important">
+ 			<span class="error-styl-defthm" ng-show="(form.filename.$dirty || submitted) &amp;&amp; form.filename.$error.required">Resume is required </span>
+ 				<br>
+ 			<span class="error-styl-defthm ng-binding ng-hide" ng-show="fileSizeExceededErr" style="line-height:100%;"> </span>
+ 													
+ 													 <span class="error-styl-defthm ng-hide" ng-show="filetype=='invalid'" style="line-height:100%;margin-top:0;padding-top: 5px;">Invalid
+														File Format</span>
+ 												</div>
+ 											</div>
+										</div><!-- end ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' -->
+											
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Name' --><div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'Name'">
+												<div class="col-md-2 col-sm-12 col-xs-12 custom-labl-defthm">
+													<label class="label-text" for="name">Name&nbsp;<span style="color: red;">*</span></label>
+												</div>
+													<div class="col-md-8">
+
+													<input class="input-half ng-valid-pattern ng-dirty ng-valid ng-valid-required" ng-model="JobApplication.firstName" name="firstName" required="" ng-pattern="/^[a-zA-Z\s]*$/" type="text" placeholder="First Name"> <input class="input-half ng-valid-pattern ng-dirty ng-valid ng-valid-required" type="text" placeholder="Last Name" ng-model="JobApplication.lastName" name="lastName" required="" ng-pattern="/^[a-zA-Z\s]*$/">
+
+												</div>
+												<div class="col-md-5 ">
+													<span class="error-styl-defthm ng-hide" ng-show="(form.firstName.$dirty || submitted) &amp;&amp; form.firstName.$error.required">
+														First name is required </span> <span class="error-styl-defthm ng-hide" ng-show="((form.firstName.$dirty || submitted) &amp;&amp;  form.firstName.$error.pattern) || ((form.lastName.$dirty || submitted) &amp;&amp;  form.lastName.$error.pattern)">
+														Please enter text only. </span>
+												</div>
+											</div>
+										</div><!-- end ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' -->
+											
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Name' -->
+
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Email' --><div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'Email'">
+											<div class="col-md-2 custom-labl-defthm">
+												<label class="label-text apply-job-formcontrol" for="name">Email&nbsp;
+												<span style="color: red;">*</span>
+												</label>
+											</div>
+											<div class="col-md-8 ">
+												<input class="input-full form-control apply-job-formcontrol ng-valid-email ng-valid-pattern ng-dirty ng-valid ng-valid-required" ng-pattern="/^([\w-\.]+@([\w-]+\.)+[\w-]{2,25})?$/" type="email" ng-model="JobApplication.emailId" name="emailId" required=""></div> <div class="col-md-5"><span class="error-styl-defthm ng-hide" ng-show="(form.emailId.$dirty || submitted) &amp;&amp; form.emailId.$error.required">
+													Email is required </span> <span class="error-styl-defthm ng-hide" ng-show="(form.emailId.$dirty || submitted) &amp;&amp; form.emailId.$error.pattern">
+													Invalid Email. </span>
+													
+											</div>
+										</div>
+										</div><!-- end ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' -->
+											
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Name' -->
+
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Email' -->
+										
+										<!-- ngIf: data.masterApplyFields.fieldName == 'Phone Number' --><div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'Phone Number'">
+											<div class="col-md-2 custom-labl-defthm">
+												<label class="label-text apply-job-formcontrol" for="name">Phone Number&nbsp;<!-- ngIf: data.isMandatory=='Y' --></label>
+											</div>
+											<div class="col-md-8">
+												<input class="input-full form-control apply-job-formcontrol ng-pristine ng-valid-pattern ng-valid ng-valid-required" ng-model="JobApplication.phoneNo" name="phoneNo" maxlength="16" ng-pattern="/^([0-9\(\)\/\+ \-]*)$/" ng-required="data.isMandatory=='Y'"></div> <div class="col-md-5"><span class="error-styl-defthm ng-hide" ng-show="(form.phoneNo.$dirty || submitted) &amp;&amp; form.phoneNo.$error.pattern">
+													Please enter only numbers. </span>
+													<span class="error-styl-defthm ng-hide" ng-show="(form.phoneNo.$dirty || submitted) &amp;&amp; form.phoneNo.$error.required">
+												Phone Number is required </span>
+											</div>
+										</div>
+
+										</div><!-- end ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' -->
+											
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Name' -->
+
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Email' -->
+										
+										<!-- ngIf: data.masterApplyFields.fieldName == 'Phone Number' -->
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Total Experience (in years)' --><div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'Total Experience (in years)'" style="margin-bottom: -24px;">
+												<div class="col-md-2 custom-labl-defthm">
+													<label class="label-text apply-job-formcontrol" for="name">Total
+														Experience (in years)&nbsp;<!-- ngIf: data.isMandatory=='Y' --></label>
+												</div>
+												<div class="col-md-8 ">
+													<input class="input-full form-control apply-job-formcontrol ng-pristine ng-valid-pattern ng-valid ng-valid-required" ng-model="JobApplication.experience" ng-change="validateExperience()" name="experience" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" maxlength="4" ng-required="data.isMandatory=='Y'">
+												</div>
+												<div class="col-md-5">
+													<span class="error-styl-defthm error-years customErrorMsg ng-hide" ng-show="(form.experience.$dirty || submitted) &amp;&amp; form.experience.$error.pattern">
+														Invalid Value. </span>
+														<span class="error-styl-defthm customErrorMsg ng-hide" ng-show="(form.experience.$dirty || submitted) &amp;&amp; form.experience.$error.required">
+												Experience is required </span>
+										<span class="error-styl-defthm experienceValidation ng-binding ng-hide" style="color: red" ng-show="errexperience"> </span>
+												</div>
+											</div>
+										</div><!-- end ngRepeat: data in getApplyFields --><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<!-- <input type="hidden" ng-model="JobApplication.jobId" id="jobid"> -->
+<!--vinvinvinvinvinvinvivnivnivnv  -->											
+			<!-- ngIf: data.masterApplyFields.fieldName == 'Upload Resume' -->
+											
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Name' -->
+
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Email' -->
+										
+										<!-- ngIf: data.masterApplyFields.fieldName == 'Phone Number' -->
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Total Experience (in years)' -->
+
+											<!-- ngIf: data.masterApplyFields.fieldName == 'Current Location' --><div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'Current Location'">
+												<div class="col-md-2 custom-labl-defthm">
+													<label class="label-text apply-job-formcontrol" for="name">Current
+														Location&nbsp;<!-- ngIf: data.isMandatory=='Y' -->
+													</label>
+												</div>
+												<div class="col-md-8">
+													<input class="input-full form-control apply-job-formcontrol ng-isolate-scope ng-pristine ng-valid ng-valid-required" type="text" ng-model="JobApplication.location" id="Autocomplete" ng-keydown="blockSuggestion($event)" ng-autocomplete="JobApplication.location" action="googleLocationApply()" details="details1" options="options1" name="location" ng-required="data.isMandatory=='Y'" maxlength="238" placeholder="" autocomplete="off">
+														 <auto-complete source="loadTags($query)" class="ng-isolate-scope"><div class="autocomplete ng-hide" ng-show="suggestionList.visible"><ul class="suggestion-list"><!-- ngRepeat: item in suggestionList.items track by track(item) --></ul></div></auto-complete>
+												</div>
+												<div class="col-md-5">
+
+													<span class="error-styl-defthm ng-hide" style="margin-left:1%;" ng-show="(form.location.$dirty || submitted) &amp;&amp; form.location.$error.required">
+														Location is required </span>
+												</div>
+											</div><div ng-repeat="data in getApplyFields" class="ng-scope">
+											<input type="hidden" ng-model="JobApplication.id" id="id" class="ng-pristine ng-valid">
+                                     		<div class="row custom-row-defthm ng-scope" ng-if="data.masterApplyFields.fieldName == 'LinkedIn Profile'">
+												<div class="col-md-2 custom-labl-defthm">
+													<label class="label-text apply-job-formcontrol" for="name">LinkedIn Profile&nbsp;<!-- ngIf: data.isMandatory=='Y' -->
+													</label>
+												</div>
+												<div class="col-md-8 custom-inpt-defthm">
+													<input class="input-full form-control apply-job-formcontrol ng-pristine ng-valid-pattern ng-valid ng-valid-required" ng-pattern="/linkedin/" type="text" ng-model="JobApplication.linkedInProfile" name="linkedInProfile" ng-required="data.isMandatory=='Y'">
+												</div>
+												<div class="col-md-5">
+
+													<span class="error-styl-defthm ng-hide" ng-show="(form.linkedInProfile.$dirty || submitted) &amp;&amp; form.linkedInProfile.$error.required">
+														LinkedIn Profile is required </span>
+														<span class="error-styl-defthm ng-hide" style="color: red; width: 115% !important;" ng-show="(form.linkedInProfile.$dirty || submitted) &amp;&amp; form.linkedInProfile.$error.pattern">
+												Please enter valid Linkedin Profile URL. </span>
+												</div>
+											</div>
+  
+										  <div style="margin-top: 15px;" class="row recaptch-custom-defthm customRecaptchaBox">
+											<div class="col-md-2"></div>
+											<div class="col-md-6 ">
+												<div id="recaptcha" class="captcha ng-isolate-scope" vc-recaptcha="" theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)" style="margin-left: 6px;"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LeGpAMTAAAAAOcPVmIsPQN2VezrFN987Qdk2vga&amp;co=aHR0cDovL3RhdGFjb21tdW5pY2F0aW9ucy5zdGFnaW5nLm9wZW5pbmdzLmNvOjgw&amp;hl=en&amp;v=r20170126104253&amp;theme=light&amp;size=normal&amp;cb=kp7jby2vadha" title="recaptcha widget" width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+												<a ng-show="response != null" class="getcap-err ng-hide" ng-click="reloadCAPTCHA()">Get another CAPTCHA</a>	
+												<span class="recap-reqerr ng-binding ng-hide" ng-show="recapchaerror">
+													 </span>
+											</div>
+
+										</div>
+
+										<div class="row">
+											<div class="col-md-2"></div>
+											<div class="col-md-5 custom-submit-defthm">
+												<div id="navcontainer" style="margin-top: 2%;margin-left: 7px;">
+													<input type="submit" value="Submit" id="submit" ng-disabled="filetype=='invalid'" class="btn btn-primary btn-lg comonBtn" name="submit">
+														
+														 
+												</div>
+											</div>
+										</div>
+										
+					
+									
+									</div>
+							</form>

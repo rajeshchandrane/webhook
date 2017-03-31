@@ -1,0 +1,260 @@
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (5911,5966,6033,6037,6038,6083,6089,6088,6094,6110,6158,6165,10511);
+
+Power Net,BigInfo Labs,DSS Law,startxpo,ZigmaPlus Technology Pte Ltd,Oranz Softwares,Viamagus Technologies,Plada Infotech Pvt Ltd,Hope Technologies Private Limited - India,laagom,Arrowhead,Healthvings Pvt Ltd,Acurus Solutions
+
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (6167,6176,6187,6192,6197,6201,6203,6205,6215,6223,6225,6226,6228,6191,6198,6199,6204);
+
+
+Crest (part of the Springer Nature group)
+Jaipuria Institute of Management
+nfaktor
+Vertex Customer Solutions india Private Limited
+Geek Online Ventures Pvt Ltd
+Coinsecure
+NextWealth Entrepreneurs Pvt. Ltd
+Veeville Consulting Pvt. Ltd
+Dream A Dream
+Sumeru Solutions
+Oigo
+Integra Micro Software Services
+Project Mudra
+Traders Carniva
+Konnect-Insights
+Mindstack
+---------------------------------------------------------------------------------------------
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (9978,9979,9980,9981,9984,9985,9986,9987,9988,9989,9990,9991,9992,9995,9996,9997,9998,9999);
+
+Alulimtech
+TravelsMaker
+Pope Segal Insurance
+PARIJATHA MACHINERY
+ISC Projects Pvt. Ltd
+Illuminz
+Novigo Solutions Pvt Ltd
+Prettislim
+SAAR IT Resources Pvt Ltd
+Kerala Communications
+Agrocrops Exim Limited
+Zensoft Services Pvt. Ltd
+Digital Guru LLP
+Niyuj
+Serosoft Solutions Private Limited
+Stirred Creative Advertising Private Limited
+NJ IndiainvestPrivate Limited
+Cadmaxx Solution
+--------------------------------------------------------------------------------
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` >= 9588 and `company_id` <= 9918;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` >= 9588 and `company_id` <= 9918; 
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` >= 9588 and `company_id` <= 9918;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` >= 9588 and `company_id` <= 9918; 
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` >= 9588 and `company_id` <= 9918; 
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` >= 9588 and `company_id` <= 9918;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` >= 9588 and `company_id` <= 9918;
+ 
+9588
+9918
+Rubyians Pvt Limited,Granvalor Events,SciWiz Technologies,National Institute For Education & Research,Paragon Digital services,Global Delight, Technologies,Railsys Engineers Pvt. Ltd.,lakeshore hospital,AUM Infotech,Softphoton,A.S.A. Consultancy Services,AppsShoppy Inc,Maple Bear,Entropika,Pronoesis,Quikrupee,Soorja,Ooze IT SOLUTIONS PVT. LTD.,Datalifecycle.com Pvt. Ltd.,Sell Serve Direct,O4organic Marketing Pvt.ltd,Appdest Technologies Pvt Ltd,National Academy,Pericent Technologies Pvt.Ltd.,Aline Global,Global Classroom Pvt.Ltd.,Steinmetz ILS,Hallmark Global Technologies,AAYUPEHAL VENTURES,Coastal Insurance Brokers Pvt Ltd,eshikhon.com,Catena Media,Zero Chaos,PaintBall X,Kinjal,Collections,Mindze,Registration wala,3rd eye advisory®,WiSilica India Pvt Ltd,C Ahead Info Technologies,QuintilesIMS,Verve Mobile (P) Limited,TNQ Books and Journals,CES LTD,Naveed Mulla & Associates,metro cash and carry,Jewelxy Marketplace Private Limited,one degree north,Ramble Over World Holidays,moving pixels pvt ltd,Dolphin Pod Learning,xoriant solutions pvt ltd,Orange Assessments Pvt Ltd,Schneide,Solutions Pvt. Ltd,Glydel Tech,Bizacuity Solutions Pvt. Ltd,ITWare India Private Limited,Eulen facility & management Service,124Apps Pvt.Ltd,Erudite Software & Learning Solutions,Global Hospitals,Maya Digital Studios,GiveIndia,Oss Root,Magic Holiday,Synoris Technologies Pvt.ltd.
+Sportzify Internet Solutions Private Ltd.
+xerox Business Sevices
+Verinon technology solutions PVT LTD
+Hbwebsol
+CreatioSoft Solutions
+Medkismet
+Grey Ticket
+Blue Hands
+Cod Studio
+Taurus Hard Soft Pvt Ltd
+Encoders Technologies
+Retail9
+Prix Automation
+Penta Techsoft Solution
+Drizzle infotech
+Inux Technology & Solutions
+Religious Kart
+Nexus Global Solutions
+Office Vcan Inc
+Path Solutions
+PositiveShift
+LoanManch
+Design House India Pvt. Ltd
+SHAARC PROJECTS Limited
+Medley
+Veddis Solars Pvt Ltd
+Techsysplus Global Service Pvt Ltd.
+Rivvot Technologies
+Printwala
+Solitaire Pharmacia Pvt. Ltd
+ANB Systems Pvt Ltd
+Sparkling Hues Gems Pvt Ltd
+Simson Softwares Private Limited
+Winsolutions Corp.
+BazikPath Inc
+LeaseWorks
+GTL Adhesive Tapes India Pvt. Ltd
+SamInfratech Private Limited
+Dream Treaders pvt ltd
+SpryOX
+Riddle Room
+Techframes Animation Studio Private Limited
+Piramal Swasthya
+Textus Intentio
+Cigniti technologies
+Amaze Soft Solutions
+Integrated Technology
+mLogica
+Ergode IT Services Pvt Ltd
+Sharda University
+SiskinTechnologies
+k2 engineers
+Instamojo
+The Blue Vector
+perfectpublishingsolutions
+SITICS LOGISTIC SOLUTIONS
+VE Teleservices Limited
+Indiameds
+Mappletree Solutions
+ULTRATECH INDIA LIMITED
+Natures Boon Private Limited
+Orissa Doot Pvt Ltd
+Agreeya Solutions India Private Limited
+Techtrain IT Solutions Private Limited
+Go Processing Ltd.
+Ping Network
+BTL India
+Sysvine Technologies Private Limited
+Chettys corner
+Aneel Lasod and Association
+Kanak Drishti Infotech Pvt. Ltd
+Glidesoft Technologies
+mCarbon
+Indian Cyber Security Solutions
+The Gym Club
+Tailorkraft
+Ritwik IT Services Private Limited
+Thasmai Automation Pvt. Ltd
+Park Controls & Communications pvt Ltd
+IBIS MEDICAL
+Innostax Software Labs
+AuthBridge Research Services Pvt. Ltd
+KNOWCROSS
+Kott Software Private Limited
+Enthsquare Inc.
+Mentorware
+Paragon ICC
+Ignatiuz Software Pvt. Ltd.
+30days Technologies Pvt. Ltd.
+Aglasem Edutech Pvt Ltd
+JAYMED TECHNOLOGIES PVT. LTD.
+Orgspire Info Technologies Private Limited
+UA consultants
+iNoryaSoft
+Baysquare
+Techsoware Software Technologies
+Fidelis Corporate Solutions Private ltd
+Domex Technical Information Pvt Limited
+EarlySalary
+Sachar Gaming Pvt Ltd
+Infoane Technologies
+CrewBloom
+Emiac
+Agiliad
+Century Soft Pvt. Ltd
+Moreish Foods Ltd
+Indicsoft Technologies Pvt Ltd
+Sterling Software
+Great Developers Info Tech Pvt Ltd.
+Floor & Furnishings (I) Pvt. Ltd.
+Spine Software Systems Pvt. Ltd.
+Q3 Technologies, Inc.
+Ornnova
+Sunshine worldwide school
+Coddle Technologies Private Ltd
+Optimus BT
+Brindavan Group of Companies
+Iskylar Technologies
+Matrix Labs
+CCS Technologies Pvt. Ltd.
+3 Embed Software Technologies
+CREINNOVATIONS
+JoulestoWatts Business Solutions
+Archnet Technologies
+BVBI Infotech
+Satyam Web Solution
+Manish Barik
+iTroSys Technologies Pvt Ltd
+Techquora Inc.
+Elvento
+Aaretch Marketing Pvt. Ltd.
+Kathputlee Arts and Films Pvt Ltd
+Paysack
+HealthTech India
+Brinok
+Greet Labs Pvt Ltd
+Bare Associates International
+Microland
+KellyOCG
+Passionate Futurist
+Groovy Infotech Private Limited
+V.K. Verma & Co.
+ARTEX BPO
+LOTrucks
+THE GATE ACADEMY
+Cashtag Technologies Pvt. Ltd.
+3D Seals Pvt. Ltd
+Sumati Legal Services
+Legistify
+Access Infotech Pvt. Ltd
+Mechlin Technologies
+Sinnonteq
+RouteRabbit Inc
+Worksgallery
+Elagoonites
+Procallo
+Photo rooster
+Abridge Info Systems Inc
+Jumbotail
+Summer Label
+Birla Medisoft Private Limited
+Indo Asian Buildcon Pvt. Ltd.
+Enbiz Software Solutions
+Tyfone Communications Development (India) Pvt. Ltd
+Bital Software Solutions Pvt Ltd
+Safeway Technologies Pvt. Ltd.
+A. K. Nair & Co.
+idesign advertising
+Amtex Enterprises, Inc
+Sam Tech Datasys Pvt. ltd.
+TRS Forms & Services
+clik2fix
+Eventize
+KinderTouch
+C. B. Online Pvt. Ltd
+Sagoon India Private Limited
+Vantage Organic Foods Pvt.Ltd
+Gutropolis Solutions
+Wani Technologies pvt ltd
+Appwallaz
+
+
+

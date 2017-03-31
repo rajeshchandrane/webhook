@@ -1,0 +1,55 @@
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Name' WHERE `c3_master_apply_fields`.`id` = 1; 
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Email' WHERE `c3_master_apply_fields`.`id` = 2; 
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Phone Number' WHERE `c3_master_apply_fields`.`id` = 3; 
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Total Experience (in years)' WHERE `c3_master_apply_fields`.`id` = 4; 
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Current Location' WHERE `c3_master_apply_fields`.`id` = 5; 
+UPDATE `c3_master_apply_fields` SET `field_name` = 'Upload Resume' WHERE `c3_master_apply_fields`.`id` = 6;
+
+
+ALTER TABLE  `c3_master_apply_fields` ADD  `default_field_order` INT( 10 ) NOT NULL AFTER  `is_mandatory_by_default` ;
+ALTER TABLE  `c3_master_apply_fields` ADD  `is_configurable` CHAR( 1 ) NOT NULL AFTER  `is_mandatory_by_default` ;
+
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '2' WHERE `c3_master_apply_fields`.`id` = 1; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '3' WHERE `c3_master_apply_fields`.`id` = 2; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '4' WHERE `c3_master_apply_fields`.`id` = 3; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '5' WHERE `c3_master_apply_fields`.`id` = 4; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '6' WHERE `c3_master_apply_fields`.`id` = 5; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '1' WHERE `c3_master_apply_fields`.`id` = 6; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '7' WHERE `c3_master_apply_fields`.`id` = 7; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '8' WHERE `c3_master_apply_fields`.`id` = 8; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '9' WHERE `c3_master_apply_fields`.`id` = 9; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '10' WHERE `c3_master_apply_fields`.`id` = 10; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '11' WHERE `c3_master_apply_fields`.`id` = 11; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '12' WHERE `c3_master_apply_fields`.`id` = 12; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '13' WHERE `c3_master_apply_fields`.`id` = 13; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '14' WHERE `c3_master_apply_fields`.`id` = 14; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '15' WHERE `c3_master_apply_fields`.`id` = 15; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '16' WHERE `c3_master_apply_fields`.`id` = 16; 
+UPDATE `c3_master_apply_fields` SET `default_field_order` = '17' WHERE `c3_master_apply_fields`.`id` = 17;
+
+UPDATE  `c3_master_apply_fields` SET  `is_mandatory_by_default` =  'Y' WHERE  `c3_master_apply_fields`.`id` =1;
+UPDATE  `c3_master_apply_fields` SET  `is_mandatory_by_default` =  'N' WHERE  `c3_master_apply_fields`.`id` =3;
+
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'N' WHERE `c3_master_apply_fields`.`id` = 1;
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'N' WHERE `c3_master_apply_fields`.`id` = 2; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 3; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 4; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 5; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 6; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 7; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 8; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 9; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 10; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 11; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 12; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 13; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 14; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 15; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 16; 
+UPDATE `c3_master_apply_fields` SET `is_configurable` = 'Y' WHERE `c3_master_apply_fields`.`id` = 17;
+
+
+UPDATE `c3_master_apply_fields` SET  `is_visible_by_default` =  'Y' WHERE  `c3_master_apply_fields`.`id` =14;
+
+
+

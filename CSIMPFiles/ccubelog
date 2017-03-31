@@ -1,0 +1,475 @@
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/deleteOfferTemplate/{id}/{companyId}],methods=[DELETE]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.deleteOfferTemplate(java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/markAsAcceptReject/{applicantId}/{status}/{jobId}/{userId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.markAsAcceptReject(java.lang.Integer,java.lang.Character,java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/generateCompanyPdfReport/{companyId}],methods=[GET]}" onto public com.zwayam.vo.CompanyPdfReport com.zwayam.controller.ZwayamManageController.getCompanyPdfReportData(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/verfiyAppVersion/{version}],methods=[GET]}" onto public com.zwayam.model.MobileVersioning com.zwayam.controller.ZwayamManageController.verfiyAppVersion(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/downloadOfferLetter/{id}/{fileName}/{jobName}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamManageController.downloadOfferLetter(java.lang.Integer,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/bulkResumeDownload/{jobApplicationId}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamManageController.bulkResumeDownload(java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/uploadProfile/{companyId}/{sessionId}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.uploadProfile(java.util.List<org.springframework.web.multipart.MultipartFile>,org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/uploadEmployeeReferralData/{companyId}/{sessionId}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.uploadEmployeeReferralData(org.springframework.web.multipart.MultipartFile,java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/addEmployeeReferralData/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.addEmployeeReferralData(com.zwayam.model.CompanyEmployee,java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/deleteCompanyEmployee/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.deleteCompanyEmployee(com.zwayam.model.CompanyEmployee,java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/loadEmployee/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.CompanyEmployee> com.zwayam.controller.ZwayamManageController.loadEmployee(java.lang.Integer,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/getallPackages/{companyId}/{sessionId}/{loginUserId}/{type}],methods=[GET]}" onto public com.zwayam.vo.SubscriptionDetailsVO com.zwayam.controller.ZwayamManageController.getMaterPackages(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Character) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/getsubscriptionDetails/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.vo.SubscriptionDetailsVO com.zwayam.controller.ZwayamManageController.getsubscriptionDetails(java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/saveBillingDetails],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.saveBillingDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/customJobRequest],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.customJobRequest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/proceedToPayment],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.proceedToPayment(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/paymentSuccessNewPackage],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.paymentSuccessNewPackage(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/getJobApplicationListForMangeInterviewScrn/{companyId}/{interviewerId}/{upcomingInterviewsState}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.vo.ManageInterviewScreenDTO com.zwayam.controller.ZwayamManageController.getJobApplicationListForMangeInterviewScrn(java.lang.Integer,java.lang.Integer,java.lang.Character,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/getMasterJobClosureFeedbackTags/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.MasterJobClosureFeedbackTags> com.zwayam.controller.ZwayamManageController.getAllMasterJobClosureFeedbackTags(java.lang.String,java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/applicantList/{jobId}/{companyId}/{loginUserId}/{sessionId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.JobApplication> com.zwayam.controller.ZwayamManageController.getAllJobApplications(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/proceedToPaymentExtendays],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.proceedToPaymentExtendays(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/AdditionalServicesProceedToPayment],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.AdditionalServicesProceedToPayment(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/paymentSuccessAdditionalServices],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.paymentSuccessAdditionalServices(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/checkLoginFromAdminPanelToManage],methods=[POST]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.ZwayamManageController.checkLoginFromAdminPanelToManage(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/getInterviewFeedbackSuggestionList/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.InterviewFeedback> com.zwayam.controller.ZwayamManageController.getInterviewFeedbackSuggestionList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/saveApplicantInterviewFeedback],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.saveApplicantInterviewFeedback(java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/manageAPI/saveApplicantJoin],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamManageController.saveApplicantJoin(java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/enableCompanyPdf/{companyId}/{reportStatus}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.enableCompanyPdf(java.lang.Integer,java.lang.Character,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getCompanyDepartmentList/{cmpID}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Department> com.zwayam.controller.ZwayamAdminController.getCompanyDepartmentList(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/userListWithPermission/{id}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.User> com.zwayam.controller.ZwayamAdminController.getAllUserWithPermission(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/reScore],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.reScore(java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Boolean) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/searchCompanyList/{searchkeyword}/{id}/{isActive}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Company> com.zwayam.controller.ZwayamAdminController.getAllCompany(java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/companyList/{isActive}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Company> com.zwayam.controller.ZwayamAdminController.getAllCompany(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getEmployeeReferralStatus/{cmpID}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public boolean com.zwayam.controller.ZwayamAdminController.employeeReferralStatus(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getATSConfiguration/{cmpID}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.ConfigurationExternalSystem com.zwayam.controller.ZwayamAdminController.ConfigurationExternalSystem(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/retriveYourPassword],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.retriveYourPassword(java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getJobExpression/{job_id}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.ZwayamAdminController.getJobExpression(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/createUser/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.addUser(com.zwayam.model.User,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/companyListByOrder/{id}/{isActive}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Company> com.zwayam.controller.ZwayamAdminController.companyListByOrder(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/goLive/{companyId}/{adminId}/{carrerSiteUrl}/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.goLive(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/companyjobListByOrder/{id}/{cmpId}/{isActive}/{companyId}/{sessionId}/{loginUserId}/{searchText}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.ZwayamAdminController.companyjobListByOrder(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getRecruiterConfig/{cmpID}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.CompanyCommonConfiguration com.zwayam.controller.ZwayamAdminController.companyCommonConfiguration(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveAtsConfiguration/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.saveAtsConfiguration(com.zwayam.model.ConfigurationExternalSystem,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/updateDb/],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.updateDb(java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/updateDb2/],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.updateDb2(java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/importStatisticsDb/],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.importStatisticsDb(java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getReportStatus/{cmpID}/{sessionId}/{loginUserId}],methods=[GET]}" onto public boolean com.zwayam.controller.ZwayamAdminController.getReportStatus(java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/UploadCareerSiteTemplate/{id}/{sessionId}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.UploadCareerSiteTemplate(org.springframework.web.multipart.MultipartFile,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception,java.io.IOException
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveCommonConfiguration/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.saveCommonConfiguration(com.zwayam.model.CompanyCommonConfiguration,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/adminScores],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.adminScores(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/decomission/{companyId}/{companyIds}/{adminId}/{sessionId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.decomission(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/whiteLabel/{companyId}/{adminId}/{carrerSiteUrl}/{suggestDomainName}/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.whiteLabel(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/suggestDomainName/{companyId}/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamAdminController.suggestDomainName(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/companyNameList/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.dto.CompanyNameDTO> com.zwayam.controller.ZwayamAdminController.getAllCompanyName(java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/enableEmployeeReferral/{companyId}/{employeeReferralStatus}/{sessionId}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.enableEmployeeReferral(org.springframework.web.multipart.MultipartFile,java.lang.Integer,java.lang.Character,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveOtherCompanyDetails],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.saveOtherCompanyDetails(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/setJobCurated/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.setJobCurated(java.lang.Integer,java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/setNotes/{companyId}/{sessionId}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.setNotes(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/checkWebSiteOrDomainDuplication],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.checkWebSiteOrDomainDuplication(java.lang.String,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/mongoDbUpdationForExistingApplies],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.mongoDbUpdationForExistingApplies(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveCompany/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.saveCompany(com.zwayam.model.Company,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/jobexpression],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.jobexpression(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveNewPassword/{newPassword}/{confirmPassword}/{userId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.getNewPassword(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/saveJobWorkflowName],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.saveJobWorkflowName(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/checkValidSession/{id}/{website}/],methods=[GET]}" onto public java.lang.Boolean com.zwayam.controller.ZwayamAdminController.checkValidSession(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getcompanyDetails/{cmpId}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.vo.CompanyDetailsDTO com.zwayam.controller.ZwayamAdminController.checkLoginSession(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/checkLoginSession/{id}/{emailId}/{sessionIdAdmin}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.ZwayamAdminController.checkLoginSession(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/login],methods=[POST]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.ZwayamAdminController.getLogin(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/loggedInUser/{emailId}/{sessionId}/{id}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.ZwayamAdminController.getLoggedInUser(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getUserDetails/{emailId}/{id}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.ZwayamAdminController.getUserDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getUserDetailsBySession/{sessionIdAdmin}/{id}/{emailId}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.ZwayamAdminController.getUserDetailsBySession(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/adminjoblist],methods=[POST]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.ZwayamAdminController.getAllJob(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/jobListForApplications/{id}/{userId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.ZwayamAdminController.getjobListForApplications(java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/jobApplicationListByJobId/{id}/{userId}/{status}/{companyId}/{companyIds}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.JobApplication> com.zwayam.controller.ZwayamAdminController.getJobApplicationListByJobId(java.lang.String,java.lang.Integer,java.lang.Character,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getJoblimit/{companyId}/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Company com.zwayam.controller.ZwayamAdminController.getJoblimit(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getJob/{id}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.ZwayamAdminController.getJob(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/joblimit],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.joblimit(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getJobForUrl/{jobUrl}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.ZwayamAdminController.getJobForUrl(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/deleteUser/{id}/{companyId}/{sessionId}/{loginUserId}],methods=[DELETE]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.deleteUser(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/getUser/{id}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.ZwayamAdminController.getUser(java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/userList/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.User> com.zwayam.controller.ZwayamAdminController.getAllUser(java.lang.Integer,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/changePassword/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.changePassword(com.zwayam.vo.ChangePassword,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/viewDownloadResume/{fileName}/{applicationId}/{companyId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamAdminController.viewDownloadResume(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/download/{companyId}/{jobId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamAdminController.download(java.lang.String,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/updateUserSessionData/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.updateUserSessionData(com.zwayam.model.User,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/downloadCareerSite/{companyId}/{id}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.ZwayamAdminController.downloadDocument(java.lang.Integer,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/adminAPI/delete/{companyId}/{adminId}/{id}/{sessionId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.ZwayamAdminController.delete(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/AdminQueryManager/runSimpleQuery/{id}/{sessionIds}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.User com.zwayam.controller.AdminQueryManager.runSimpleQuery(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/AdminQueryManager/runBlobQuery/{id}/{sessionIds}/{loginUserId}],methods=[POST]}" onto public com.zwayam.model.User com.zwayam.controller.AdminQueryManager.runBlobQuery(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/AdminQueryManager/saveQuery],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.AdminQueryManager.saveQuery(java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/AdminQueryManager/getQueryName],methods=[POST]}" onto public java.util.List<com.zwayam.model.AdminQueries> com.zwayam.controller.AdminQueryManager.getQueryName() throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/AdminQueryManager/getQuery],methods=[POST]}" onto public java.util.List<com.zwayam.model.AdminQueries> com.zwayam.controller.AdminQueryManager.getQuery(java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/retriveYourPassword],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.EmployeeReferralController.retriveYourPassword(java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/updateEmployeeReferralSessionData/{companyId}/{sessionId}/{loginUserId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.EmployeeReferralController.updateEmployeeReferralSessionData(com.zwayam.model.CompanyEmployee,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/saveNewPassword/{newPassword}/{confirmPassword}/{userId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.EmployeeReferralController.getNewPassword(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/checkValidSession/{id}/{website}/],methods=[GET]}" onto public java.lang.Boolean com.zwayam.controller.EmployeeReferralController.checkValidSession(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/checkLoginSession/{id}/{sessionId}/],methods=[GET]}" onto public com.zwayam.model.CompanyEmployee com.zwayam.controller.EmployeeReferralController.checkLoginSession(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/login/{id}/{emailId}/{password}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.EmployeeReferralController.getLogin(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/loggedInUser/{emailId}/{id}/{sessionId}],methods=[GET]}" onto public com.zwayam.model.CompanyEmployee com.zwayam.controller.EmployeeReferralController.getLoggedInUser(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getUserDetails/{emailId}/{id}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.EmployeeReferralController.getUserDetails(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getUserDetailsBySession/{sessionId}/{id}],methods=[GET]}" onto public com.zwayam.model.User com.zwayam.controller.EmployeeReferralController.getUserDetailsBySession(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getJobListCompanyEmployee/{id}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.EmployeeReferralController.getAllJob(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getJob/{id}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.EmployeeReferralController.getJob(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getPointHistory/{id}],methods=[GET]}" onto public java.util.List<com.zwayam.model.EmployeeReferralHistory> com.zwayam.controller.EmployeeReferralController.getPointHistory(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/changeEmployeePassword/{companyId}],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.EmployeeReferralController.changeEmployeePassword(java.lang.Integer,com.zwayam.model.CompanyEmployee)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getDashboardDetails/{companyId}/{employeeId}/{employeeEmailId}],methods=[GET]}" onto public com.zwayam.vo.EmployeeReferralDashboardDetails com.zwayam.controller.EmployeeReferralController.getDashboardDetails(java.lang.Integer,java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getEmployeeLoggedInDetails],methods=[POST]}" onto public java.lang.Boolean com.zwayam.controller.EmployeeReferralController.getEmployeeLoggedInDetails(java.lang.Integer,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getLeaderBoardDetails/],methods=[POST]}" onto public com.zwayam.vo.LeaderBoardDetails com.zwayam.controller.EmployeeReferralController.getLeaderBoardDetails(java.lang.Integer,java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getLeaderBoardList/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.vo.LeaderBoardDetails> com.zwayam.controller.EmployeeReferralController.getLeaderBoardList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getEmployeeReferralHistory/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.vo.LeaderBoardDetails> com.zwayam.controller.EmployeeReferralController.getEmployeeReferralHistory(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getMyReferrals],methods=[POST]}" onto public java.util.List<com.zwayam.model.JobApplication> com.zwayam.controller.EmployeeReferralController.getMyReferrals(java.lang.Integer,java.lang.Integer,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getReferralSuggestions/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.vo.ReferralSuggestions> com.zwayam.controller.EmployeeReferralController.getReferralSuggestions(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/sendInviteCandidatesEmail],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.EmployeeReferralController.inviteCandidate(java.lang.Integer,java.util.List<java.lang.String>,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getJobCompanyUser/{jobId}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.EmployeeReferralController.getJobByUserIdPassingUrl(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/EmployeeReferralAPI/getCompanyLogo/{id}],methods=[GET]}" onto public com.zwayam.model.ConfigurationExternalSystem com.zwayam.controller.EmployeeReferralController.getCompanyLogo(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/publish/{companyId}/{loggedAdminIdAdminId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.publish(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/registration],methods=[POST],consumes=[application/json]}" onto public com.zwayam.vo.RegistrationStatus com.zwayam.controller.CareerSiteController.registration(com.zwayam.vo.Registration)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/eventList/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.eventList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/retriveYourPassword],methods=[POST]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.retriveYourPassword(java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveNewPassword/{newPassword}/{confirmPassword}/{token}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.getNewPassword(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getJob/{id}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.CareerSiteController.getJob(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getJobApplicationByJobUrl/{jobUrl}],methods=[GET]}" onto public com.zwayam.model.JobApplication com.zwayam.controller.CareerSiteController.getJobApplicationByJobUrl(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getJobForUrl/{jobUrl}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.CareerSiteController.getJobForUrl(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getJobForUrl/{jobUrl}/{externalSource}],methods=[GET]}" onto public com.zwayam.model.Job com.zwayam.controller.CareerSiteController.getJobForUrl(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/list/{id}/{userGeoLocation}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.getFeaturedJobList(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/searchJob/{id}/{job}/{city}/{userGeoLocation}/{sessionId}/{loginUserId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.searchJob(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/searchJob/{id}/{job}/{city}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.searchJob(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/searchJob/{id}/{job}/{city}/{userGeoLocation}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.searchJob(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/searchJobByCompany/{id}/{job}/{city}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.searchJobByCompany(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyWithLinkedIn],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyWithLinkedIn(com.zwayam.dto.ApplyWithLinkedInDTO)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyJob],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyJob(org.springframework.web.multipart.MultipartFile,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getPlainJobApplicationByJobUrl/{jobUrl}],methods=[GET]}" onto public com.zwayam.vo.JobApplicationVo com.zwayam.controller.CareerSiteController.getPlainJobApplicationByJobUrl(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/themeSelected/{id}/{companyId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.themeSelected(java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveWorkingFolder],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.modifyHtmls(com.zwayam.vo.HTMLElements)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveFolder/{companyId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.saveFolder(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/doUndo/{companyId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.doUndo(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/signIn],methods=[POST]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.getSignIn(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/signInWithSession/{sessionId}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.getSignInWithSession(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/createDomain/{domain}/{companyId}/{emailId}/{sendMail}/{loggedAdminIdAdminId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.changeDomain(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/configureTheme/{emailId}/{sessionId}/{loginUserId}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.doConfigureTheme(java.lang.String,java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveFile],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.saveFile(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.Integer,java.lang.String,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/loadHTMLElements/{companyId}/{mode}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.CareerSiteController.loadHTMLElements(java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveElementDataToWorkCopy/{companyId}],methods=[POST],consumes=[application/json],produces=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.saveElementDataToWorkCopy(java.util.List<com.zwayam.editor.element.TextElement>,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyJobFromFb],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyJobFromFb(java.lang.Object,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveRemoteFile],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.saveRemoteFile(java.lang.Integer,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getImagesFromRepository],methods=[GET]}" onto public com.zwayam.vo.RepositoryImageList com.zwayam.controller.CareerSiteController.getImagesFromRepository()
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getCompanySEOTags/{companyId}],methods=[GET]}" onto public com.zwayam.model.ConfigurationSeo com.zwayam.controller.CareerSiteController.getCompanySEOTags(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getCompanyFacebookPageId/{facebookPageId}],methods=[GET]}" onto public com.zwayam.model.ResponseObject com.zwayam.controller.CareerSiteController.getCompanyFacebookPageId(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/signInWithFacebook],methods=[POST]}" onto public java.lang.Integer com.zwayam.controller.CareerSiteController.signInWithFb(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/registrationFromFacebook],methods=[POST]}" onto public com.zwayam.vo.RegistrationStatus com.zwayam.controller.CareerSiteController.registrationFromFacebook(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getDepartmentwiseJob/{id}/{userGeoLocation}],methods=[GET]}" onto public java.util.Map<java.lang.String, java.util.List<com.zwayam.model.Job>> com.zwayam.controller.CareerSiteController.getDepartmentwiseJob(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyJobFromIndeed],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyJobFromIndeed(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/shortlisRejectApplicantsForMobile/{id}/{applicantId}/{reasons}/{operation}/{notes}/{suggestedJobForShortlist}/{sendEmailNotification}/{userId}/{jobsId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.shortlisRejectApplicantsForMobile(java.lang.Integer,java.lang.Integer,java.util.List<java.lang.String>,java.lang.Character,java.lang.String,java.lang.Integer,boolean,java.lang.Integer,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/createIndex],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.createIndex()
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/loginWithMobileApp],methods=[POST]}" onto public com.zwayam.model.User com.zwayam.controller.CareerSiteController.getloginWithMobileApp(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/webisteRegistration],methods=[POST]}" onto public com.zwayam.vo.RegistrationStatus com.zwayam.controller.CareerSiteController.webisteRegistration(com.zwayam.vo.Registration)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/contactRegistration],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.contactRegistration(com.zwayam.vo.Registration)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/jobdetailsForIncrementSection/],methods=[GET]}" onto public com.zwayam.vo.NumberingSectionVO com.zwayam.controller.CareerSiteController.getJobdetailsForIncrementSection()
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/masterfieldList],methods=[GET]}" onto public java.util.List<com.zwayam.model.MasterApplyFields> com.zwayam.controller.CareerSiteController.getAllmasterfield()
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getApplicationInterviewSchedule/{interviewId}],methods=[GET]}" onto public com.zwayam.model.ApplicationInterviewSchedule com.zwayam.controller.CareerSiteController.getApplicationInterviewSchedule(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applicantInterviewConfirm],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applicantInterviewConfirm(com.zwayam.model.ApplicationInterviewSchedule)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getApplicationInterview/{appInterviewId}/{interviewerId}],methods=[GET]}" onto public com.zwayam.model.ApplicationInterviewer com.zwayam.controller.CareerSiteController.getApplicationInterview(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getInterviewFeedbackDetails/{appInterviewId}/{operation}/{interviewerId}],methods=[GET]}" onto public com.zwayam.model.ApplicantInterviewFeedback com.zwayam.controller.CareerSiteController.getInterviewFeedbackDetails(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getRecapthaSiteKey/{id}],methods=[GET]}" onto public java.lang.String com.zwayam.controller.CareerSiteController.getRecapthaSiteKey(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/talentCommunityApply],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.talentCommunityApply(org.springframework.web.multipart.MultipartFile,java.lang.Object,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/unSubscribeTalentCommunityUserFromMail/{talentCommunityEncodedId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.unSubscribeTalentCommunityUserFromMail(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/candidateLogin/{companyId}/{emailId}/{password}],methods=[GET]}" onto public java.lang.Boolean com.zwayam.controller.CareerSiteController.candidateLogin(java.lang.Integer,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getLoggedInCandidate/{emailId}/{companyId}],methods=[GET]}" onto public com.zwayam.model.Candidate com.zwayam.controller.CareerSiteController.getLoggedInCandidate(java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/checkCandidateLoginSession/{companyId}/{sessionId}/],methods=[GET]}" onto public com.zwayam.model.Candidate com.zwayam.controller.CareerSiteController.checkCandidateLoginSession(java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/updateCandidateData],methods=[POST],consumes=[application/json]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.updateCandidateData(com.zwayam.model.Candidate)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getApplicantDocumentRequestsList/{applicantId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.ApplicantDocumentRequest> com.zwayam.controller.CareerSiteController.getCandiateJobApplicationDetailsList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getJobApplicationListForCandidate/{applicantEmailId}/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.JobApplication> com.zwayam.controller.CareerSiteController.getAllJobApplication(java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getCandidateObj/{emailId}/{companyId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.getCandidateObj(java.lang.String,java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/candidateDocumentsUpload],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.candidateDocumentsUpload(java.lang.Integer,java.lang.Integer,java.lang.Integer,java.util.Date,java.lang.String,org.springframework.web.multipart.MultipartFile) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/updateCandidateApplicantDocumentRequestsList/{applicantId}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.updateCandidateApplicantDocumentRequestsList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getCompany/{companyId}],methods=[GET]}" onto public com.zwayam.model.Company com.zwayam.controller.CareerSiteController.getCompany(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/loadThemesList],methods=[GET]}" onto public java.util.List<com.zwayam.vo.ThemeVO> com.zwayam.controller.CareerSiteController.loadThemesList()
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/offerStatusUpdate/{jobApplicationId}/{status}],methods=[GET]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.offerStatusUpdate(java.lang.String,java.lang.Character)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getTagList/{id}],methods=[GET]}" onto public java.util.List<java.lang.String> com.zwayam.controller.CareerSiteController.getTagList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyJobGD],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyJobGD(org.springframework.web.multipart.MultipartFile,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/candidateJobApply],methods=[POST]}" onto public java.lang.Object com.zwayam.controller.CareerSiteController.candidateJobApply(org.springframework.web.multipart.MultipartFile,java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/candidateJobApplyGD],methods=[POST]}" onto public java.lang.Object com.zwayam.controller.CareerSiteController.candidateJobApplyGD(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String,java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/applyJobDB],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.applyJobDB(org.springframework.web.multipart.MultipartFile,java.lang.Object,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/candidateJobApplyDB],methods=[POST]}" onto public java.lang.Object com.zwayam.controller.CareerSiteController.candidateJobApplyDB(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getFresherInterOrAlertsTagsList/{id}/{status}],methods=[GET]}" onto public java.util.List<com.zwayam.model.ShortlistRejectTags> com.zwayam.controller.CareerSiteController.getAllShortlistRejectTags(java.lang.Integer,java.lang.Character)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/shortlisRejectApplicant],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.shortlisRejectApplicant(java.lang.Integer,java.lang.Integer,java.util.List<java.lang.String>,java.lang.Character,java.lang.String,java.lang.Integer,boolean,java.lang.Integer,java.lang.Integer) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/sendInviteCandidatesEmail],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.inviteCandidate(java.lang.Integer,java.util.List<java.lang.String>,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getCompanyConfigurationDetails/{companyId}],methods=[GET]}" onto public com.zwayam.vo.CompanyDetailsDTO com.zwayam.controller.CareerSiteController.getConfigurationExternalSystem(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getApplyFields/{id}],methods=[GET]}" onto public java.util.List<com.zwayam.model.ApplyFieldsConfiguration> com.zwayam.controller.CareerSiteController.getAllApplyFieldsConfiguration(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getListOfAllJobs/{companyId}/{operation}],methods=[GET]}" onto public java.util.List<com.zwayam.model.Job> com.zwayam.controller.CareerSiteController.getListOfAllJobs(java.lang.Integer,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/getInterviewFeedbackSuggestionList/{companyId}],methods=[GET]}" onto public java.util.List<com.zwayam.model.InterviewFeedback> com.zwayam.controller.CareerSiteController.getInterviewFeedbackSuggestionList(java.lang.Integer)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/ccubeAPI/saveApplicantInterviewFeedback],methods=[POST]}" onto public com.zwayam.model.Status com.zwayam.controller.CareerSiteController.saveApplicantInterviewFeedback(java.lang.Object) throws java.lang.Exception
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/generateTestUrlForCandidate],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.generateTestUrlForCandidate(int,int,java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getAllTestDefinitionFromApi],methods=[GET]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getAllTestDefinitionFromApi(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getAllTestDefinitionFromDb],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getAllTestDefinitionFromDb(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/companyTemopararyEnableTestManagement],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.saveRequiredTestsForJob(int)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/applyTestForCandidate],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.applyTestForCandidate(int,java.lang.String,java.util.ArrayList<java.lang.String>)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestDetails],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestDetails(java.lang.String,java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestResultsOfCandidate],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestResultsOfCandidate(java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestResultOfCandidateByTestIdAndEmailId],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestResultOfCandidateByTestIdAndEmailId(java.lang.String,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getJobAndSelectedTests],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getJobAndSelectedTests(int)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestStatusForJob],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestStatusForJob(int,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestsForApplyAndGetAddedTests],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestsForApplyAndGetAddedTests(int,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/getTestsOfCandidateAndTestResults],methods=[POST]}" onto public com.zwayam.test.common.restResponse com.zwayam.test.controllers.TestManagementController.getTestsOfCandidateAndTestResults(int,int,java.lang.String)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/TestManagement/submitUserTestResult],methods=[POST],consumes=[application/x-www-form-urlencoded],produces=[application/json]}" onto public java.lang.Object com.zwayam.test.controllers.TestManagementController.submitUserTestResult(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry register
+INFO: Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractUrlHandlerMapping registerHandler
+INFO: Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractUrlHandlerMapping registerHandler
+INFO: Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Nov 07, 2016 1:41:19 PM org.springframework.web.servlet.handler.AbstractUrlHandlerMapping registerHandler
+INFO: Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Nov 07, 2016 1:41:20 PM org.springframework.jmx.export.MBeanExporter afterSingletonsInstantiated
+INFO: Registering beans for JMX exposure on startup
+Nov 07, 2016 1:41:20 PM org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup start
+INFO: Starting beans in phase 2147483647
+Nov 07, 2016 1:41:20 PM org.springframework.scheduling.quartz.SchedulerFactoryBean startScheduler
+INFO: Starting Quartz Scheduler now
+Nov 07, 2016 1:41:20 PM org.quartz.core.QuartzScheduler start
+INFO: Scheduler org.springframework.scheduling.quartz.SchedulerFactoryBean#0_$_NON_CLUSTERED started.
+Nov 07, 2016 1:41:20 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-8080"]
+Nov 07, 2016 1:41:20 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-8080"]
+Nov 07, 2016 1:41:20 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Nov 07, 2016 1:41:21 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-nio-9090"]
+Nov 07, 2016 1:41:21 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Nov 07, 2016 1:41:21 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-nio-9090"]
+Nov 07, 2016 1:41:21 PM org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer start
+INFO: Tomcat started on port(s): 8080 (http) 9090 (http)
+Nov 07, 2016 1:41:21 PM org.springframework.boot.StartupInfoLogger logStarted
+INFO: Started Application in 20.767 seconds (JVM running for 21.192)
+Nov 07, 2016 1:42:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+Nov 07, 2016 1:43:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+Nov 07, 2016 1:44:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+Nov 07, 2016 1:45:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+Nov 07, 2016 1:45:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: uploadJobToShineBean
+Nov 07, 2016 1:46:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+Nov 07, 2016 1:47:00 PM com.zwayam.job.DelegatingJobBean executeInternal
+INFO: Starting job: interviewFeedbackBean
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at com.zwayam.job.CareerBuilderImportApplication.careerBuilderAPI(CareerBuilderImportApplication.java:105)
+	at com.zwayam.job.CareerBuilderImportApplication.execute(CareerBuilderImportApplication.java:80)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

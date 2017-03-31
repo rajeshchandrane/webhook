@@ -1,0 +1,39 @@
+Zwayam - New Registration
+{"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_company.career_site_url,c3_user.email_id",
+"condition":"where date_of_registration >= DATE_SUB(NOW(),INTERVAL 1 HOUR) and c3_company.id = c3_user.company_id"}
+New Company Registration
+companyTemplate
+
+
+
+{
+"weeklyjobdetails":{"from":"c3_job","fields":"*","condition":"where created_date >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"},
+"weeklycompanydetails" : {"from":"c3_company","fields":"*","condition":"where date_of_registration >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"},
+"weeklyjobapplications" : {"from":"c3_job_application","fields":"*","condition":"where date_applied >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"}
+}
+
+Scheduled
+weeklyReport
+
+
+{
+"queries":[{
+"name":"weeklyjobdetails", 
+"from":"c3_job",
+"fields":"*",
+"condition":"where created_date >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"
+},
+{
+"name":"weeklycompanydetails",
+"from":"c3_company",
+"fields":"*",
+"condition":"where date_of_registration >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"
+},
+{
+"name":"weeklyjobapplications",
+"from":"c3_job_application",
+"fields":"*",
+"condition":"where date_applied >= DATE_SUB(NOW(),INTERVAL 1 WEEK)"
+}]
+}

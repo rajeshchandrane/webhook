@@ -1,0 +1,16 @@
+select c3_company.* from c3_company,c3_job where c3_company.id = c3_job.company_id and c3_company.is_live = 1 and c3_job.status = 1 group by c3_company.id;
+
+
+select c3_job.id,c3_job.job_title,c3_job.role,c3_job.role_id,c3_job.location,c3_job.max_yrs_of_experience,c3_job.skill_set,c3_job.desired_skill,c3_job.tags,c3_job.designation,c3_job.edu_qualification,c3_job.positions_req,c3_job.qualification,c3_job.salary,c3_job.min_job_salary,c3_job.max_job_salary,c3_job.min_job_indicate_salary,c3_job.max_job_indicate_salary,c3_job.visibility_start_date,c3_job.visibility_end_date,c3_job.status,c3_job.modified_by_user_id,c3_job.modified_date,c3_job.company_id,c3_job.job_url,c3_job.min_yrs_of_experience,c3_job.job_code,c3_job.department_id,c3_job.reference_number,c3_job.recruiter_name,c3_job.recruiter_linkedIn_link,c3_job.score_expression,c3_job.filter_expression,c3_job.sub_department,c3_job.job_source,c3_job.featured_job,c3_job.created_by,c3_job.created_date,c3_job.job_visibilty,c3_job.job_type,c3_job.job_education,c3_job.statistics_id,c3_job.ats_identifier,c3_job.workflow_name,c3_job.is_workflow_modified_by_user,c3_job.is_curated,c3_job.curatedby,c3_job.notes,c3_job.curated_date,c3_job.applies_not_blocked,c3_job.email_applies_on_status,c3_job.attach_resume,c3_company.company_name from c3_company,c3_job where c3_company.id = c3_job.company_id and c3_company.is_live = 1 and c3_job.status = 1;
+
+select c3_job.short_description,c3_job.long_description,c3_company.company_name from c3_company,c3_job where c3_company.id = c3_job.company_id and c3_company.is_live = 1 and c3_job.status = 1;
+
+
+
+c3_job.id,c3_job.job_title,c3_job.role,c3_job.role_id,c3_job.location,c3_job.max_yrs_of_experience,c3_job.skill_set,c3_job.desired_skill,c3_job.tags,c3_job.designation,c3_job.edu_qualification,c3_job.positions_req,c3_job.qualification,c3_job.salary,c3_job.min_job_salary,c3_job.max_job_salary,c3_job.min_job_indicate_salary,c3_job.max_job_indicate_salary,c3_job.visibility_start_date,c3_job.visibility_end_date,c3_job.status,c3_job.modified_by_user_id,c3_job.modified_date,c3_job.company_id,c3_job.job_url,c3_job.min_yrs_of_experience,c3_job.job_code,c3_job.department_id,c3_job.reference_number,c3_job.recruiter_name,c3_job.recruiter_linkedIn_link,c3_job.score_expression,c3_job.filter_expression,c3_job.sub_department,c3_job.job_source,c3_job.featured_job,c3_job.created_by,c3_job.created_date,c3_job.job_visibilty,c3_job.job_type,c3_job.job_education,c3_job.statistics_id,c3_job.ats_identifier,c3_job.workflow_name,c3_job.is_workflow_modified_by_user,c3_job.is_curated,c3_job.curatedby,c3_job.notes,c3_job.curated_date,c3_job.applies_not_blocked,c3_job.email_applies_on_status,c3_job.attach_resume,c3_job.notification_email
+
+
+
+
+
+SELECT c3_company.id,c3_company.company_name,c3_company.domain_name FROM c3_company,c3_apply_fields_configuration WHERE c3_company.id = c3_apply_fields_configuration.company_id and c3_company.is_live = 1 and c3_apply_fields_configuration.apply_field_id = 6 and c3_apply_fields_configuration.field_order = 6;

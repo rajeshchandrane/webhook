@@ -1,0 +1,28 @@
+ALTER TABLE  `c3_job` ADD  `is_curated` TINYINT( 1 ) NOT NULL DEFAULT  '0' AFTER  `is_workflow_modified_by_user` ,
+ADD  `curatedby` VARCHAR( 64 ) NULL DEFAULT NULL AFTER  `is_curated` ;
+
+ALTER TABLE  `c3_job` ADD  `notes` TEXT NULL AFTER  `curatedby` ;
+ALTER TABLE  `c3_company` ADD  `sales_person` VARCHAR( 64 ) NULL AFTER  `number_of_employees` ;
+ALTER TABLE  `c3_company` ADD  `linkedin_id` VARCHAR( 128 ) NULL DEFAULT NULL AFTER  `customer_support` ;
+
+<br>
+<div class="form-group" style="display:inline-block;postion:absolute;">	
+    Customer Successor Representator
+    <input type="text" id="customersupport" style="width:370px;" ng-model="customersupport" class="form-control" placeholder="Customer Successor representator" required/>	
+</div>
+<div class="form-group" style="display:inline-block;postion:absolute;margin-left:21px;">	
+    LinkedIn ID
+    <input type="text" id="linkedInId" style="width:388.7px;" ng-model="linkedInId" class="form-control" placeholder="LinkedIn ID" required/>	
+</div>
+<div class="form-group" style="postion:absolute;">
+	Notes	
+    <textarea  ng-model="notes" class="form-control" class="colabBox" ng-disabled="!isCurated"  placeholder="Notes" ></textarea>
+</div> 
+
+///////////////////
+
+<div class="form-group" style="display:inline-block;width:50.4%;">	
+    LinkedIn ID
+    <input type="text" id="inkedinId" style="width:100%;" ng-model="inkedinId" class="form-control" placeholder="LinkedIn Id" required/>	
+</div>
+display:inline-block;width:49%;position:relative;padding-right:5px;

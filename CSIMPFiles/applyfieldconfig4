@@ -1,0 +1,44 @@
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (10697,10698,10699,10700,10701,10702,10704,10705,10707,10709,10710,10712,10714,10722,10724,10725);
+
+
+Code Ninja
+Unisoft Technologies
+Unity Living
+Magical Imagination Portugal S.A
+Sunworld Soft Pvt Ltd
+Limitless Mobility Solution Pvt.Ltd.
+BERKOWITS HAIR AND SKIN
+Wizard E Marketing pvt.ltd
+Weballures Technologies Pvt Ltd
+three bags full
+EduRecords education services pvt ltd
+OAMPI
+Marktine
+Matter of Tech
+INSIGMA INC
+HealthMir
+----------------------------------------------------------------------------
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (10660,10661,10662,10664,10666,10667,10668,10669);
+
+Trutech Webs Pvt Ltd
+Tech-Tailor Solutions Private Ltd
+Emotiongift
+IOT POT India Pvt Ltd
+Kemio Solutions Private Limited
+Moneytap
+LABHDI LIFESTYLE LTD
+Inventum Technologies
+
+

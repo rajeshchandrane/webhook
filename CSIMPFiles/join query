@@ -1,0 +1,64 @@
+{
+"name":"fetchId",
+"from":"c3_company",
+"fields":"id",
+"condition":"where is_live = 1"
+}
+
+
+
+{
+"queries":[{
+"name":"companydetails",
+"from":"c3_company c",
+"fields":"c.id,c.company_name,c.domain_name",
+"condition":"where c.id = $id$"},
+{
+"name":"companyjobdetails",
+"from":"c3_job j,c3_job_application ja,c3_company c",
+"fields":"j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a,c3_job j where a.job_id = j.id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id"
+},
+{
+"name":"emails",
+"from":"c3_user",
+"fields":"c3_user.email_id",
+"condition":"where c3_user.company_id = $id$"
+}]
+}
+
+-------------------------------------------------
+SELECT j.company_id,COALESCE( SUM( a.no_of_view ) , 0 )
+FROM c3_job_log a, c3_job j
+WHERE a.job_id = j.id
+GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 10
+---------------------------------------------------
+{
+"name":"fetchId",
+"from":"c3_job_log a, c3_job j,c3_company c",
+"fields":"c.id",
+"condition":"where a.job_id = j.id and c.id = j.company_id and c.is_live = 1 and j.status = 1 GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 10"
+}
+----------------------------------------------------
+
+
+select c.id from c3_company c,c3_job_application ja,c3_job j where j.id = ja.job_id and j.company_id = ja.company_id and is_live = 1 
+having (select coalesce(sum(a.no_of_view),0) from c3_job_log a,c3_job j where a.job_id = j.id  group by a.job_id) < 1 and count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) < 1;
+
+
+
+
+select * from (SELECT c.id,COALESCE( SUM( a.no_of_view ) , 0 )
+FROM c3_job_log a, c3_job j, c3_company c
+WHERE c.id = j.company_id
+AND a.job_id = j.id
+GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 10) as A
+
+join
+
+(select c.id,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) 
+from c3_job j, c3_company c,c3_job_application ja
+where ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id
+GROUP BY j.company_id having count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) < 10) as B on A.id = B.id 
+
+

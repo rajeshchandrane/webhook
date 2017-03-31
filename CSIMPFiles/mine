@@ -1,0 +1,80 @@
+{
+"queries":[{
+"name":"companydetails",
+"from":"c3_company c",
+"fields":"c.id,c.company_name,c.domain_name",
+"condition":"where c.id = $id$"},
+{
+"name":"companyjobdetails",
+"from":"c3_job j,c3_job_application ja,c3_company c",
+"fields":"j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a where a.job_id = id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id"
+},
+{
+"name":"emails",
+"from":"c3_user",
+"fields":"c3_user.email_id",
+"condition":"where c3_user.company_id = $id$"
+}]
+}
+
+select j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a where a.job_id = id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id
+
+select j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a where a.job_id = id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = 1 group by j.id
+-------------------------------------------------------------------------------------------------------------------------------------
+{
+"queries":[{
+"name":"totaljobcountdetails", 
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id,c.company_name,c.domain_name,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,count(distinct case when ja.final_recommendation = 'Shortlist' and ja.company_id = c.id then ja.id end) as goodProfilesCount",
+"condition":"where c.id = j.company_id and c.id = ja.company_id and c.id = $id$ group by c.id"
+},
+{
+"name":"jobapplycountdetails",
+"from":"c3_job j,c3_job_application ja",
+"fields":"j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = 'Pending' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount,count(distinct case when ja.final_recommendation = 'Shortlist' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as goodProfiles",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id order by j.company_id"
+},
+{
+"name":"emails",
+"from":"c3_user,c3_company",
+"fields":"c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_user.company_id = $id$ group by c3_company.company_name"
+}]
+}
+
+
+
+
+select count(distinct case when ja.final_recommendation = 'Shortlist' and ja.company_id = c.id then ja.id end) as goodProfile from c3_company c,c3_job j,c3_job_application ja where c.id = j.company_id and c.id = ja.company_id and c.id = 1 group by c.id
+
+
+UPDATE `reportgenerator`.`rg_generic_queries` SET `query` = '{
+"queries":[{
+"name":"totaljobcountdetails", 
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id,c.company_name,c.domain_name,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,count(distinct case when ja.final_recommendation = ''Shortlist'' and ja.company_id = c.id then ja.id end) as goodProfilesCount",
+"condition":"where c.id = j.company_id and c.id = ja.company_id and c.id = $id$ group by c.id"
+},
+{
+"name":"jobapplycountdetails",
+"from":"c3_job j,c3_job_application ja",
+"fields":"j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = ''Pending'' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount,count(distinct case when ja.final_recommendation = ''Shortlist'' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as goodProfiles",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id order by j.company_id"
+},
+{
+"name":"emails",
+"from":"c3_user,c3_company",
+"fields":"c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_user.company_id = $id$ group by c3_company.company_name"
+}]
+}' WHERE `rg_generic_queries`.`id` = 9;
+
+
+select count(distinct case when jb.job_id = j.id then jb.id end) from c3_job j,c3_job_board_share where 
+
+
+
+
+
+

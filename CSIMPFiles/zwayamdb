@@ -1,0 +1,116 @@
+CREATE TABLE `c3_event_report_log` (
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ `event_type` varchar(255) DEFAULT NULL,
+ `new_data` varchar(1024) DEFAULT NULL,
+ `old_data` varchar(1024) DEFAULT NULL,
+ `loggedin_user_id` int(128) DEFAULT NULL,
+ `event_time` datetime DEFAULT NULL,
+ `is_processed` tinyint(1) DEFAULT NULL,
+ `processed_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `event_priority` varchar(10) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1
+
+CREATE TABLE `c3_generic_queries` (
+ `id` bigint(20) NOT NULL AUTO_INCREMENT,
+ `alertFrequency` char(1) DEFAULT NULL,
+ `executionTime` time DEFAULT NULL,
+ `lastExecuted` date DEFAULT NULL,
+ `mailSubject` varchar(255) DEFAULT NULL,
+ `nextExecution` date DEFAULT NULL,
+ `query` varchar(4096) DEFAULT NULL,
+ `queryType` varchar(255) DEFAULT NULL,
+ `templateName` varchar(255) DEFAULT NULL,
+ `entityQueryType` varchar(1024) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1
+
+INSERT INTO  `ccube`.`c3_generic_queries` (`id` ,`alertFrequency` ,`executionTime` ,`lastExecuted` ,`mailSubject` ,`nextExecution` ,`query` ,`queryType` ,`templateName` ,`entityQueryType`
+)
+VALUES (
+NULL,  'N',  '10:20:00',  '2016-11-10',  'Welcome to Zwayam, Your Intelligent Recruitment Engine !',  '2016-11-11',  '{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_company.career_site_url,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ?"},
+{
+"name":"emails",
+"from":"c3_user",
+"fields":"c3_user.email_id",
+"condition":"where c3_user.company_id = ?"
+}]
+}',  'NewCompanyRegistration',  'companyTemplate', NULL
+);
+
+
+INSERT INTO  `ccube`.`c3_generic_queries` (`id` ,`alertFrequency` ,`executionTime` ,`lastExecuted` ,`mailSubject` ,`nextExecution` ,`query` ,`queryType` ,`templateName` ,`entityQueryType`
+)
+VALUES (
+NULL,  'D',  '10:00:00',  '2016-11-11',  'Weekly Job | Applies | Company Reports',  '2016-11-12',  '{
+"queries":[{
+"name":"weeklyjobdetails", 
+"from":"c3_job",
+"fields":"job_title AS JobTitle,location,job_url,job_code",
+"condition":""
+},
+{
+"name":"weeklycompanydetails",
+"from":"c3_company",
+"fields":"company_name,website,career_site_url",
+"condition":""
+},
+{
+"name":"weeklyjobapplications",
+"from":"c3_job_application",
+"fields":"first_name,email_id,job_id,current_status",
+"condition":""
+}]
+}',  'Scheduled',  'weeklyReport', NULL
+);
+
+
+INSERT INTO `ccube`.`c3_generic_queries` (`id`, `alertFrequency`, `executionTime`, `lastExecuted`, `mailSubject`, `nextExecution`, `query`, `queryType`, `templateName`, `entityQueryType`) VALUES (Null, 'D', '08:00:00', '2016-11-11', 'Zwayam | Daily report - Score', '2016-11-12', '{
+"queries":[{
+"name":"dailyreportdetails",
+"from":"c3_job_application",
+"fields":"CAST(date_applied AS DATE) As Date,count(case when filter_score = -60 then id end) As ''-60'',count(case when filter_score = -50 then id end) As ''-50'',count(case when filter_score = -40 then id end) As ''-40'',count(case when filter_score = -30 then id end) As ''-30'',count(case when filter_score = -20 then id end) As ''-20'',count(case when filter_score = -1 then id end) As ''-1'',count(case when filter_score is null then id end) As ''null'',count(case when filter_score = 0 then id end) As ''0'',count(case when filter_score between 1 and 24 then id end) As ''1-24'',count(case when filter_score between 25 and 49 then id end) As ''25-49'',count(case when filter_score between 50 and 74 then id end) As ''50-74'',count(case when filter_score between 75 and 99 then id end) As ''75-99'',count(case when filter_score = 100 then id end) As ''100'',count(id) As Total","condition":"where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW() Group by CAST(date_applied AS DATE) Order by date_applied desc"}]
+}', 'Scheduled', 'dailyReportJobApplyScores', NULL);
+
+New Queries
+ALTER TABLE  `c3_generic_queries` CHANGE  `entityQueryType`  `entityQuery` VARCHAR( 1024 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL ;
+
+UPDATE `ccube`.`c3_generic_queries` SET `query` = '{
+"queries":[{
+"name":"dailyreportdetails",
+"from":"c3_job_application",
+"fields":"CAST(date_applied AS DATE) As Date,count(case when filter_score = -60 then id end) As mSixty,count(case when filter_score = -50 then id end) As mFifty,count(case when filter_score = -40 then id end) As mForty,count(case when filter_score = -30 then id end) As mThirty,count(case when filter_score = -20 then id end) As mTwenty,count(case when filter_score = -1 then id end) As mOne,count(case when filter_score is null then id end) As ''null'',count(case when filter_score = 0 then id end) As zero,count(case when filter_score between 1 and 24 then id end) As one,count(case when filter_score between 25 and 49 then id end) As two,count(case when filter_score between 50 and 74 then id end) As three,count(case when filter_score between 75 and 99 then id end) As four,count(case when filter_score = 100 then id end) As five,count(id) As Total","condition":"where is_active = 1 AND date_applied between CAST((DATE_SUB(NOW(),INTERVAL 7 DAY)) AS DATE) and NOW() Group by CAST(date_applied AS DATE) Order by date_applied desc"}]
+}' WHERE `c3_generic_queries`.`templateName` = 'dailyReportJobApplyScores';
+
+-- Dec 07
+
+ALTER TABLE  `rg_event_report_log` ADD  `full_data` VARCHAR( 1024 ) NULL AFTER  `event_priority` ;
+
+-- Dec 08
+
+ALTER TABLE  `rg_event_report_log` CHANGE  `processed_time`  `processed_time` DATETIME NULL DEFAULT NULL ;
+
+-- Dec 09
+
+ALTER TABLE  `rg_generic_queries` CHANGE  `nextExecution`  `nextExecution` DATETIME NULL DEFAULT NULL ;
+ALTER TABLE  `rg_generic_queries` CHANGE  `lastExecuted`  `lastExecuted` DATETIME NULL DEFAULT NULL
+ALTER TABLE  `rg_generic_queries` CHANGE  `alertFrequency`  `alertFrequency` VARCHAR( 128 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL ; ;
+
+-- Dec 10
+
+CREATE TABLE `rg_admin_queries` (
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ `query` varchar(1024) DEFAULT NULL,
+ `query_name` varchar(256) DEFAULT NULL,
+ `file_name` varchar(256) DEFAULT NULL,
+ `blob_field_name` varchar(256) DEFAULT NULL,
+ `blob_file_field_name` varchar(256) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1
+
+

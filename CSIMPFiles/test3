@@ -1,0 +1,39 @@
+{
+"queries":[{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = 'Emails on Delete Company'"
+}]
+}
+
+{
+"queries":[{
+"name":"general",
+"from":"c3_company",
+"fields":"c3_company.id,c3_company.company_name",
+"condition":"where c3_company.id = $companyId$"},
+{
+"name":"userdetails",
+"from":"c3_user",
+"fields":"c3_user.username,c3_user.email_id",
+"condition":"where c3_user.id = $adminId$"
+},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = 'Emails on Delete Company'"
+}]
+}
+
+UPDATE `reportgenerator`.`rg_generic_queries` SET `query` = '{
+"queries":[{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = ''Emails on Delete Company''"
+}]
+}' WHERE `rg_generic_queries`.`id` = 15;
+
+

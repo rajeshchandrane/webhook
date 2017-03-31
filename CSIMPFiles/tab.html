@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Dynamic Tabs</h2>
+  <ul class="nav nav-tabs">
+<li class="active"><a data-toggle="tab" href="#home">Run Query</a></li>
+    <li><a data-toggle="tab" href="#menu1">Create/Update</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      
+<div class="col-lg-11">
+						<div class="box">
+
+							<!-- Title Bar Start -->
+							<!-- <div class="box-title">
+								<span class="gray">{{pageHeading}}</span>
+							</div> -->
+							<!-- Title Bar End -->
+
+							<!-- Content Start -->
+							<div class="content">
+								<!-- Row Start -->
+								
+								<div class="row">
+
+									<!-- Left Side -->
+									<div class="col-lg-6">
+										<div class="form-group" data-ng-init="fillQueryName();">
+										<label for="select" class="control-label">Select Query:<b style="color:Red;">*</b></label>
+										<select class="form-control" ng-options="queryName for queryName in queryNameList" ng-model="selected" ng-change="selectQuery();">
+										<option value="" label="Select Query"></option>										
+										</select>
+										</div>
+										<input type="hidden" ng-model="id" name="id" id="id" /> 
+										<!-- From -->
+										<div class="form-group">
+										<label for="from" class="control-label">From:<b style="color:Red;">*</b></label>
+										<textarea cols="40" rows="3" ng-model="from" name="from" id="from" class="form-control" value="" data-bv-notempty data-bv-notempty-message="The from is required" required="required">
+										</textarea>
+										</div>
+
+										<!-- Fields -->
+										<div class="form-group">
+										<label for="fields">Fields:<b style="color:Red;">*</b></label>
+										<textarea cols="40" rows="3" ng-model="fields" name="fields" id="fields" class="form-control" value="" required="required" >
+										</textarea>
+										</div>
+										
+
+										<!-- Condition -->
+										<div class="form-group">
+										<label for="condition">Condition:</label>
+										<textarea cols="40" rows="3" ng-model="condition" name="condition" id="condition" class="form-control" value=""></textarea>
+										</div>
+
+ 
+                                        <!-- filename -->
+										<div class="form-group">
+										<label for="filename">File Name:<b style="color:Red;">*</b></label>
+										<input type="text" ng-model="filename" name="filename" id="filename" required="required" class="form-control" value="" placeholder="File name" />
+										</div> 
+										<!-- Blob field name -->
+										<div class="form-group">
+										<label for="blobfield">Blob Field Name:</label><b style="color:Red;">*</b>
+										<input type="text" ng-init="blobfield = null" ng-model="blobfield" name="blobfield" id="blobfield" required="required" class="form-control" value="" placeholder="Blob Field Name" />
+										</div> 
+										
+										<!-- Blob filename -->
+										<div class="form-group">
+										<label for="blobfilename">Blob File Field Name:</label><b style="color:Red;">*</b>
+										<input type="text" ng-init="blobfilename = null" ng-model="blobfilename" name="blobfilename" id="blobfilename" required="required" disabled class="form-control" value="" placeholder="Blob Folder Name" />
+										</div> 
+										
+										<div class="form-group">
+										
+										<label><input type="checkbox" value="" ng-model="checked"/>for save the query</label></div>
+										<div class="form-group" ng-show="checked">
+										<form id="myform" ng-submit="saveQuery();">
+										<b style="color:Red;"></b>
+										<input type="email" ng-model="email" name="email" id="email" class="form-control" placeholder="Email Id" style="width:250px; float:left;margin-bottom:20px;margin-right:17px;" required>
+										<input type="time" ng-model="executionTime" name="executionTime" id="executionTime" class="form-control" placeholder="Execution Time" style="width:250px;margin-bottom:20px;" required> 
+										<input type="text" style="width:250px; float:left;margin-right:5.1px;" ng-model="queryname"  class="form-control" value="" placeholder="Enter the Query Name" required/>
+										<select id="alertFrequency" class="form-control" ng-model="alertFrequency" style="width:250px;display:inline-block;margin-bottom:20px; margin-left: 12px;" required>
+											<option value="" label="Select Alert Frequency"></option>
+											<option value="D">Daily</option>
+											<option value="W">Weekly</option>
+											<option value="M">Monthly</option>
+										</select>
+										<input type="submit"
+												value="Save Query" class="btn btn-success btn-wide" id="savequery"/>
+										</form>		
+										</div>
+									</div>									
+
+								</div>
+								
+							<div class="row">
+									<!-- Save -->
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="spacer"></div>
+
+											<span><input ng-click="runQuery();" value="Run" type="button" id="run"
+												class="btn btn-success btn-wide"></span>
+											<span ng-if="blobfield!=null && blobfield!=''"><input ng-click="getblobfile();" value="Get Blob File" type="button" id="getblob"
+												class="btn btn-success btn-wide"> </span>
+											<input type="button"
+												value="Clear" class="btn btn-success btn-wide" id="clear"/>
+
+										</div>
+									</div>
+								</div>
+								
+							
+								<!-- Row End -->
+
+							</div>
+							<!-- Content End -->
+
+						</div>
+					</div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+

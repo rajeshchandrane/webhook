@@ -1,0 +1,45 @@
+Activities Planned:
+
+Feature:-
+Company level template Configuration for Shortlist and Reject emails.
+
+Activities Done:
+
+Feature -
+Company level template Configuration for Shortlist and Reject emails.
+#528 - send mail to customer support/sales team when state changes for applies
+Bug -
+#1843 - Zwayam site | Careers | Job | Apply page | when not giving mandatory Field Data and click on submit , Warning message is not showing .
+#1794 - career site | chatting bot : when typed the message and clicked, it must scroll up now show the message. Now we have to scroll manually- attached screen shot
+#1770 - Zwayam site : After sign when clicked on career site, loader keeps loading - attached screen shot
+#1768 - career site | chatting bot : Newer message is not showing up until and unless we move the scrollbar .
+#1767 - career site : enetered the text "Hi" and clicked on enter two times, in the first chat it said "hi", then again it went as "null" - attached screen shot
+#1766 - career site | chatting bot : When hit on enter, without entering anything, show message as "undefined"- attached screen shot
+#1723 - Manage | Email to candidate : When 'use recruiter email to send notification ' is not unabled, default 'from' and 'reply' to emails should be used.-attached scrrenshots.
+#1709 - Manage | manage applies : Request Resume does not work. Clicking on Request Resume takes me to job view page with meta tags. It should take me to pre filled Apply page
+#1684 - Zwayam Manage | Jobs / Applications | Request Resume | showing an Error message when Login through the candidate received mail
+#1665 - Zwayam Manage | Manage Jobs | Job | click on View from the Job title showing an Configuration message .
+
+
+Activities Not Done
+
+none
+
+Carried Forward:
+
+#1243 - zwayam chatbot using API.ai
+
+Planned for Current Week:
+
+Feature:-
+#149 - Success Factors integration for getting jobs and creating apply redirection url (Similar to hirecraft and hirepro integration)
+
+Bug:-
+#1793 - Career site| chatting bot : chatting history is lost, when page is refreshed.
+#1795 - career site | chatting bot : message is getting cut - attached screen shot
+#1796 - career site | chatting bot : response for the questions asked are inappropriate - attached screen shot
+#1801 - Career site | chatting bot : chatting history is lost in application status page after applying for job - attached screenshots.
+#1803 - Career site | Chatting bot : In text "Our customer Support " c is in small letter and S is in caps. Maintain consistency- attached screen shot
+#1805 - career site | chatting bot : Is message " Our customer Support person will contact you immediately." appropriate? Will customer success person will contact to the candidates?
+
+

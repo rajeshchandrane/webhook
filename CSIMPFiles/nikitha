@@ -1,0 +1,1 @@
+select t.name,t.email_id,t.phone_number,t.interests,t.location,t.experience,t.source,t.is_fresher_intern_experienced from c3_company c,c3_talent_community_application t where c.id = t.company_id and c.company_name = 'Voonik'

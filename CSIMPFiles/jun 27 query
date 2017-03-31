@@ -1,0 +1,177 @@
+SELECT COUNT( c3_job_application.id ) , c3_job_application.status_notes, c3_job.job_title
+FROM c3_job, c3_job_application
+where c3_job.job_source='HP' and c3_job.company_id=274 and c3_job.id=c3_job_application.job_id group by  c3_job_application.status_notes 
+
+SELECT  `job_title` 
+FROM c3_job, c3_job_application
+WHERE c3_job.id = c3_job_application.job_id
+LIMIT 0 , 30
+
+
+//HappiestMind
+
+SELECT c3_job.id,c3_job.job_title,c3_job.reference_number,c3_job.job_visibilty,c3_department.department_name,c3_job.company_id,c3_job.department_id,c3_job.job_source  
+FROM c3_job, c3_department
+WHERE c3_job.job_source =  'HP' and c3_job.company_id=274
+AND c3_job.department_id = c3_department.id
+
+
+
+SELECT  c3_job_application.id,c3_job_application.status,c3_job_application.status_notes,c3_job_application.date_applied,c3_job_application.job_id
+FROM c3_job_application
+where c3_job_application.job_id in (SELECT c3_job.id
+FROM c3_job
+WHERE c3_job.company_id=274 and c3_job.job_source='HP')
+
+
+
+SELECT  c3_job_application.id,c3_job_application.status,c3_job_application.status_notes,c3_job_application.date_applied,c3_job_application.job_id,
+c3_job.job_title,c3_job.reference_number,c3_job.job_visibilty,c3_department.department_name,c3_job.department_id
+FROM c3_job_application,c3_job,c3_department
+where c3_job.id=c3_job_application.job_id AND c3_job.department_id = c3_department.id and c3_job_application.job_id in (SELECT c3_job.id
+FROM c3_job
+WHERE c3_job.company_id=274 and c3_job.job_source='HP')
+
+jul11
+-----
+
+select c3_company.company_name,c3_job.job_title,c3_job.job_code,c3_job.filter_expression,c3_job.created_date,c3_job.modified_date from c3_job,c3_company where c3_job.company_id=c3_company.id
+
+
+
+select c3_company.company_name,c3_user.username,c3_user.email_id,c3_user.phone_no from c3_company,c3_user where c3_company.referrer like "%others%" and c3_company.id=c3_user.company_id            => shreyas
+
+
+
+select c3_job.id,c3_job.long_description,c3_company.company_name,c3_job.job_url,c3_job.job_title from c3_job,c3_company where c3_job.company_id=c3_company.id and c3_job.status=1            => shreyas
+
+
+
+21/07/2016
+
+select c3_company.company_name,c3_job_application.first_name,c3_job_application.last_name,c3_job_application.email_id,c3_job.job_code,c3_job.job_title,c3_job_application.date_applied,
+c3_job_application.phone_no,c3_job_application.experience,c3_job_application.location,c3_job_application.status,c3_job_application.source,c3_job_application.score,
+c3_job_application.referrer_email_id,c3_job_application.modified_by_user_id,c3_job_application.admin_recommendation,c3_job_application.filter_score,
+c3_job.job_visibilty,c3_job.reference_number,c3_job.status 
+
+from c3_job,c3_job_application,c3_company
+
+where
+c3_job.id=c3_job_application.job_id and c3_company.id=c3_job_application.company_id and c3_job_application.date_applied >= '2016-05-03 12:48:26' and c3_job_application.date_applied <= sysdate()
+
+
+select
+c3_job_application.company_id,c3_company.company_name,c3_job_application.first_name,c3_job_application.last_name,c3_job_application.email_id,c3_job_application.date_applied,
+c3_job_application.phone_no,c3_job_application.experience,c3_job_application.location,c3_job_application.status,c3_job_application.source,c3_job_application.score,
+c3_job_application.referrer_email_id,c3_job_application.modified_by_user_id,c3_job_application.admin_recommendation,c3_job_application.filter_score,
+c3_job_application.filename
+from
+c3_job_application,c3_company
+where c3_company.id=c3_job_application.company_id and c3_job_application.date_applied >= '2016-05-03 12:48:26'
+
+Aug 11 todays jobapplications
+
+select c3_job_application.first_name,c3_job_application.last_name,c3_company.company_name,c3_job_application.source,c3_job_application.filter_score from c3_job_application,c3_company where c3_job_application.company_id = c3_company.id and c3_job_application.source = 'others' and c3_job_application.date_applied between '2016-08-16 00:00:00' and NOW(); 
+
+
+//Schedule every day 2.00am
+
+
+
+select a.date_applied,
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -60 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -50 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -40 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -30 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -20 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.filter_score) from c3_job_application as b where b.filter_score = -1 and b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied),
+(select count(b.date_applied) from c3_job_application as b where b.date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW() and a.date_applied = b.date_applied)
+from c3_job_application as a where a.date_applied between DATE_SUB(NOW(),INTERVAL 30 DAY) and NOW() Group by CAST(a.date_applied AS DATE);
+
+
+fetch all minus scores
+
+select date_applied,
+(select count(filter_score) from c3_job_application where filter_score = -60),
+(select count(filter_score) from c3_job_application where filter_score = -50),
+(select count(filter_score) from c3_job_application where filter_score = -40),
+(select count(filter_score) from c3_job_application where filter_score = -30),
+(select count(filter_score) from c3_job_application where filter_score = -20),
+(select count(filter_score) from c3_job_application where filter_score = -1)
+from c3_job_application Group by CAST(date_applied AS DATE);
+
+
+select a.date_applied,
+(select count(b.id) from c3_job_application as b where b.filter_score = -60 and a.date_applied = b.date_applied),
+(select count(b.id) from c3_job_application as b where b.filter_score = -50 and a.date_applied = b.date_applied),
+(select count(b.id) from c3_job_application as b where b.filter_score = -40 and a.date_applied = b.date_applied),
+(select count(b.id) from c3_job_application as b where b.filter_score = -30 and a.date_applied = b.date_applied),
+(select count(b.id) from c3_job_application as b where b.filter_score = -20 and a.date_applied = b.date_applied),
+(select count(b.id) from c3_job_application as b where b.filter_score = -1 and a.date_applied = b.date_applied)
+from c3_job_application as a Group by CAST(a.date_applied AS DATE);
+
+
+select date_applied,
+  sum(case when filter_score = -60 then 1 else 0 end),
+  sum(case when filter_score = -50 then 1 else 0 end),
+  sum(case when filter_score = -40 then 1 else 0 end),
+  sum(case when filter_score = -20 then 1 else 0 end),
+  sum(case when filter_score = -1 then 1 else 0 end)
+from c3_job_application
+Group by CAST(date_applied AS DATE);
+
+/////currect query////////////////
+select date_applied,
+  count(case when filter_score = -60 then id end),
+  count(case when filter_score = -50 then id end),
+  count(case when filter_score = -40 then id end),
+  count(case when filter_score = -30 then id end),
+  count(case when filter_score = -20 then id end),
+  count(case when filter_score = -1 then id end),
+  count(case when filter_score is null then id end),
+  count(case when filter_score between 0 and 99 then id end),
+  count(case when filter_score = 100 then id end),
+  count(id)
+from c3_job_application where date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW()
+Group by CAST(date_applied AS DATE);
+/////////////////////////////////
+select date_applied,
+  count(case when filter_score = -60 then id end),
+  count(case when filter_score = -50 then id end),
+  count(case when filter_score = -40 then id end),
+  count(case when filter_score = -20 then id end),
+  count(case when filter_score = -1 then id end),
+  (select count(id) from c3_job_application where date_applied between CAST((DATE_SUB(NOW(),INTERVAL 30 DAY)) AS DATE) and NOW()) 
+from c3_job_application 
+Group by CAST(date_applied AS DATE);
+
+
+select c3_job.job_title,c3_company.company_name,
+count(case when c3_job_application.current_status = 'Pending' then c3_job_application.id end),
+count(case when c3_job_application.current_status = 'Shortlisted' then c3_job_application.id end),
+count(case when c3_job_application.current_status = 'Reject' then c3_job_application.id end)
+from c3_job,c3_job_application,c3_company
+where c3_job.id = c3_job_application.job_id and c3_job_application.company_id = c3_company.id and c3_job.company_id = c3_company.id
+Group by c3_job.job_title;
+
+select * from c3_job_application where date_applied >= '2016-11-09 00:00:00'
+
+
+
+
+
+select c3_job_application.email_id,c3_job_application.date_applied,c3_job_application.linkedin_profile,c3_job_application.job_id,c3_job_application.company_id
+from c3_job_application where CAST(date_applied AS DATE) = '2016-12-11';
+
+
+
+
+
+
+
+
+
+
+
+
+

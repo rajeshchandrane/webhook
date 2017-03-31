@@ -1,0 +1,61 @@
+{
+"queries":[{
+"name":"weeklyjobdetails", 
+"from":"c3_job",
+"fields":"job_title AS JobTitle,location,job_url,job_code",
+"condition":""
+},
+{
+"name":"weeklycompanydetails",
+"from":"c3_company",
+"fields":"company_name,website,career_site_url",
+"condition":""
+},
+{
+"name":"weeklyjobapplications",
+"from":"c3_job_application",
+"fields":"first_name,email_id,job_id,current_status",
+"condition":""
+}]
+}
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,
+	count(j.id) as JobCount,
+	count(ja.id) as JobAppCount,
+	(select count(a.id) from c3_job_application a where a.job_id = j.id and a.current_status = 'Pending' and a.is_active = 1) as 			PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id group by j.id
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,
+	count(j.id) as JobCount,
+	count(ja.id) as JobAppCount,
+	(select count(a.id) from c3_job_application a where a.job_id = j.id and a.current_status = 'Pending' and a.is_active = 1) as 			PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id and c.id = 1 group by j.id
+
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,
+	count(case when j.company_id = c.id then j.id) as JobCount,
+	count(case when ja.company_id = c.id and ja.job_id = j.id then ja.id) as JobAppCount,
+	count(case when ja.job_id = j.id and ja.current_status = 'Pending' and a.is_active = 1) as PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id group by j.id
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,
+	count(case when j.company_id = c.id then j.id end) as JobCount,
+	count(case when ja.company_id = c.id and ja.job_id = j.id then ja.id end) as JobAppCount,
+	count(case when ja.job_id = j.id and ja.current_status = 'Pending' and ja.is_active = 1 then ja.id end) as PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id group by j.id
+
+
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,(select count(id) from c3_job where company_id = c.id) as job count,
+	count(case when ja.company_id = c.id and ja.job_id = j.id then ja.id end) as JobAppCount,
+	count(case when ja.job_id = j.id and ja.current_status = 'Pending' and ja.is_active = 1 then ja.id end) as PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id group by j.id
+
+SELECT c.id,c.company_name,j.id,j.job_title,j.location,(select count(id) from c3_job where company_id = c.id) as jobCount,
+	count(case when ja.company_id = c.id and ja.job_id = j.id then ja.id end) as JobAppCount,
+	count(case when ja.job_id = j.id and ja.current_status = 'Pending' and ja.is_active = 1 then ja.id end) as PendingCount 
+from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and c.id = j.company_id group by j.id
+
+
+
+

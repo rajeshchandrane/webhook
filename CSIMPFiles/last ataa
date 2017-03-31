@@ -1,0 +1,4 @@
+{"applicant_name":"Hi [first_name]","company_name":"[company_name]","domain_name":"[domain_name]","applicant_email":"[email_id]",
+"Interview_Name":"[interview_round]","facetoface":"Face to Face","Phone":"Phone","Skype":"Skype","location":"[location]","phone_number":"[phone_number]","interview_mode":"[interview_mode]",
+"skpe_id":"[skype_id]","interview_from_time_1":"[interview_from_time_1]","interview_from_time_2":"[interview_from_time_2]","interview_from_time_3":"[interview_from_time_3]",
+"Username":"[Username]","password":"[password]","interview_to_time_1":"[interview_to_time_1]","interview_to_time_2":"[interview_to_time_2]","interview_to_time_3":"[interview_to_time_3]"}

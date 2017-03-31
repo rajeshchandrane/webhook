@@ -1,0 +1,356 @@
+package zwayam.common.rg.cron;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import javax.mail.MessagingException;
+
+import org.apache.commons.lang.time.DateUtils;
+import org.apache.log4j.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.mail.MailSendException;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.mail.smtp.SMTPSendFailedException;
+import zwayam.common.rg.be.GenericMailerComponent;
+import zwayam.common.rg.common.JsonQueryStructure;
+import zwayam.common.rg.feeds.GenericFeedsGenerator;
+import zwayam.common.rg.models.EventReportLog;
+import zwayam.common.rg.models.GenericQueries;
+import zwayam.common.rg.models.JsonQueryList;
+import zwayam.common.rg.repositories.EventReportingLogRepository;
+import zwayam.common.rg.repositories.GenericQueriesRepository;
+import zwayam.common.rg.service.EmailService;
+import zwayam.common.rg.app.MessagingAdapter.eventType;
+import zwayam.common.rg.app.MessagingAdapter;
+
+@Component
+public class CronJobs {
+
+	static final Logger logger = Logger.getLogger(CronJobs.class);
+
+	@Autowired
+	GenericQueriesRepository genericqueryrepo;
+
+	@Autowired
+	GenericMailerComponent mailer;
+
+	@Autowired
+	EmailService emailservice;
+
+	@Autowired
+	EventReportingLogRepository eventReportlogrepo;
+
+	@Autowired
+	GenericFeedsGenerator genericFeedsGenerator;
+
+	@Autowired
+	MessagingAdapter messagingAdapter;
+	
+	public static boolean startedListeningToMessages = false;
+	public static boolean startedFetchingEvents = false;
+
+	@Scheduled(fixedDelayString = "${rg.fixed.messageListenerdelay.events}")
+	public void processMessageListener()throws Exception {
+		
+		if (startedListeningToMessages == false) {
+			startedListeningToMessages = true;
+			messagingAdapter.MessageListner(MessagingAdapter.eventType.GenericCareerSiteEventQueue, "eventLogReport");
+		}
+
+	}
+	
+	@Scheduled(fixedDelayString = "${rg.fixed.mailerdelay.events}")
+	public void getEventData() throws Exception {
+		
+		if(startedFetchingEvents == false) {
+			startedFetchingEvents = true;
+			while(true){
+				List<EventReportLog> events = (List<EventReportLog>) eventReportlogrepo.findAllEvents();
+				getMailingData(events);
+			}
+		}
+	}
+	
+	public void getMailingData(List<EventReportLog> events) throws Exception {
+			
+		for (EventReportLog event : events) {
+			Map<String, Object> eventDatas = getEventData(event.newData);
+			if (!eventDatas.containsKey("careerSiteFlag")) {
+				List<GenericQueries> queries = (List<GenericQueries>) genericqueryrepo.findByQueryType(event.eventType);
+				for (int j = 0; j < queries.size(); j++) {
+					try {
+						HashMap<String, ArrayList<HashMap>> data = GetQueryResults(eventDatas, queries.get(j));
+						String[] emails = GetEmails(eventDatas, queries.get(j));
+						logger.error(emails[0]);
+						if (emails.equals(null) || emails.length == 0 || emails[0] == "") {
+							logger.error("No Mailid" + eventDatas);
+							setErrorMessage(event);
+							break;
+						}
+						String subject = getSubject(queries.get(j).mailSubject, data, event.eventType);
+						logger.info(subject);
+						Date processedTime = emailservice.sendMails(queries.get(j), data, subject,
+								queries.get(j).templateName, emails);
+						mailer.updateStatusOfEvent(event.id, processedTime);
+					} catch (MailSendException ex) {
+						j--;
+						Thread.sleep(60000);
+						logger.error("SMTPSendFailedException", ex);
+					} catch (Exception ex) {
+						logger.error("Exception Occured : " + new ObjectMapper().writeValueAsString(event), ex);
+						setErrorMessage(event);
+						break;
+					}
+				}
+			}
+			else
+			{
+				try{
+				Date processedTime = emailservice.sendMailsRequest(event.newData);
+				mailer.updateStatusOfEvent(event.id, processedTime);
+				}catch (MailSendException ex) {
+					Thread.sleep(60000);
+					Date processedTime = emailservice.sendMailsRequest(event.newData);
+					mailer.updateStatusOfEvent(event.id, processedTime);
+					logger.error("SMTPSendFailedException", ex);
+				}catch (Exception ex) {
+					logger.error("Exception Occured : " + new ObjectMapper().writeValueAsString(event), ex);
+					setErrorMessage(event);
+				}
+			}
+		}
+	}
+
+	private void setErrorMessage(EventReportLog event) {
+		try {
+			logger.error("Save error status start");
+			Date processedTime = new Date();
+			EventReportLog errEvent = new EventReportLog();
+			errEvent.id = event.id;
+			errEvent.eventType = event.eventType;
+			errEvent.newData = event.newData;
+			errEvent.eventTime = event.eventTime;
+			errEvent.isProcessed = false;
+			errEvent.processedTime = processedTime;
+			errEvent.fullData = event.fullData;
+			errEvent.isErrorOccured = true;
+			eventReportlogrepo.save(errEvent);
+			logger.error("Save error status end");
+		} catch (Exception ex) {
+			logger.error("Exception occured while saving the error message :",ex);
+		}
+	}
+
+	private Map<String, Object> getEventData(String newData) throws JsonParseException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		Map<String, Object> retMap = new HashMap<String, Object>();
+		retMap = mapper.readValue(newData, new TypeReference<Map<String, Object>>(){});
+		return retMap;
+	}
+
+	private String getSubject(String mailSubject, HashMap<String, ArrayList<HashMap>> data, String eventTypes)throws Exception {
+		// TODO Auto-generated method stub
+		if(eventTypes.equalsIgnoreCase(eventType.NewCompanyRegistration.toString())){
+			return mailSubject;
+		}
+		else if(eventTypes.equalsIgnoreCase(eventType.Decomission.toString())
+				|| eventTypes.equalsIgnoreCase(eventType.Delete.toString()) 
+				|| eventTypes.equalsIgnoreCase(eventType.WhiteLabel_Admin.toString()) 
+				|| eventTypes.equalsIgnoreCase(eventType.WhiteLabel_InfraTeam.toString()) 
+				|| eventTypes.equalsIgnoreCase(eventType.WhiteLabeled.toString())
+				|| eventTypes.equalsIgnoreCase(eventType.Zwayam_goLive_Admin.toString())
+				|| eventTypes.equalsIgnoreCase(eventType.Zwayam_goLive_InfraTeam.toString()) 
+				|| eventTypes.equalsIgnoreCase(eventType.Zwayam_goLive.toString()) 
+				|| eventTypes.equalsIgnoreCase(eventType.Company_Registration_Mail_For_Zwayam.toString())){
+			for(String name : data.keySet()){
+				for(HashMap value : data.get(name)){
+					return mailSubject.replace("$CompanyName$", value.get("company_name").toString());
+				}		
+			}
+		}
+		return null;
+	}
+
+	private HashMap<String, ArrayList<HashMap>> GetQueryResults(Map<String, Object> eventData, GenericQueries queryDef)
+					throws IOException, JsonParseException, JsonMappingException, SQLException, InterruptedException {
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		JsonQueryList q = mapper.readValue(queryDef.query, JsonQueryList.class);
+	
+		HashMap<String, ArrayList<HashMap>> data = new HashMap<String, ArrayList<HashMap>>();
+		data = setEventData(eventData);
+		for (JsonQueryStructure jqs : q.queries) {
+			if (!jqs.name.equalsIgnoreCase("emails")) {
+				
+				ArrayList<HashMap> result = mailer.getAllResults(jqs.from, jqs.fields, jqs.condition, eventData);
+				data.put(jqs.name, result);
+			}
+		}
+		return data; 
+	}
+
+	private HashMap<String, ArrayList<HashMap>> setEventData(Map<String, Object> eventData) {
+		HashMap<String, ArrayList<HashMap>> data = new HashMap<String, ArrayList<HashMap>>();
+		 ArrayList<HashMap> list = new  ArrayList<HashMap>();
+		 list.add((HashMap) eventData);
+		 data.put("eventData", list);
+		return data;
+	}
+
+	private String[] GetEmails(Map<String, Object> eventData, GenericQueries queryDef) 
+			throws JsonParseException, JsonMappingException, IOException, SQLException  
+					{
+		ObjectMapper mapper = new ObjectMapper();
+		JsonQueryList q = mapper.readValue(queryDef.query, JsonQueryList.class);
+	
+		for (JsonQueryStructure jqs : q.queries) {
+			if (jqs.name.equalsIgnoreCase("emails")) {
+				return mailer.getMailIds(jqs.from, jqs.fields, jqs.condition, eventData);
+			} 
+		}
+		return null; 
+	}
+
+	@Scheduled(fixedDelayString = "${rg.fixed.mailerdelay.scheduledReports}")
+	public void getScheduledTasks() throws Exception 
+	{
+		List<GenericQueries> listquery = genericqueryrepo.findQueryByTypeAndNextExecutiontime("Scheduled");
+		for (GenericQueries nextQuery : listquery) 
+		{
+			executeReports(nextQuery);			
+		}
+	}
+
+	public void executeReports(GenericQueries nextQuery) throws Exception {
+		ObjectMapper mapper = new ObjectMapper();
+		Date processedTime = new Date();
+		HashMap<String, ArrayList<HashMap>> data = new HashMap<String, ArrayList<HashMap>>();
+		if (nextQuery.entityQuery != null) {
+			JsonQueryStructure q = mapper.readValue(nextQuery.entityQuery, JsonQueryStructure.class);
+			ArrayList<HashMap> result = mailer.getScheduledJobsData(q.from, q.fields, q.condition);
+			for (int i = 0; i < result.size(); i++) {
+				HashMap id = result.get(i);
+				String[] emails = null;
+				JsonQueryList qry = mapper.readValue(nextQuery.query, JsonQueryList.class);
+				for (JsonQueryStructure jqs : qry.queries) {
+					if (jqs.name.equalsIgnoreCase("emails")) {
+						emails = mailer.getMailIds(jqs.from, jqs.fields, jqs.condition, id);
+						data = setEmails(data,jqs,emails);
+					} else {
+						ArrayList<HashMap> results = mailer.getAllResults(jqs.from, jqs.fields, jqs.condition, id);
+						data.put(jqs.name, results);
+					}
+				}
+				try {					
+					if(!emails.equals(null) && emails.length != 0 && emails[0] != ""){
+						processedTime = emailservice.sendReport(nextQuery, data, nextQuery.mailSubject,
+							nextQuery.templateName, emails);
+					}else{
+						
+						logger.info("Email doesn't get for :"+id);
+					}
+				} 
+				catch(MailSendException ex) {
+					i--;
+					Thread.sleep(60000);
+					logger.info("SMTPSendFailedException", ex);
+				}
+			}
+					this.updateProcessedTime(nextQuery.id, processedTime, nextQuery.alertFrequency,nextQuery.executionTime);
+			}			
+			else {
+			JsonQueryList q = mapper.readValue(nextQuery.query, JsonQueryList.class);
+			String[] emails = null;
+			for (JsonQueryStructure jqs : q.queries) {
+				if (jqs.name.equalsIgnoreCase("emails")) {
+					emails = mailer.getMailIds(jqs.from, jqs.fields, jqs.condition, null);
+					data = setEmails(data,jqs,emails);
+				} else {
+					ArrayList<HashMap> result = mailer.getScheduledJobsData(jqs.from, jqs.fields, jqs.condition);
+					data.put(jqs.name, result);
+				}
+			}
+			try {
+				if(!emails.equals(null) && emails.length != 0 && emails[0] != ""){
+					processedTime = emailservice.sendReport(nextQuery,data, nextQuery.mailSubject, nextQuery.templateName,
+						emails);				
+				}else{
+					
+					logger.info("Email doesn't get.");
+				}
+				this.updateProcessedTime(nextQuery.id, processedTime, nextQuery.alertFrequency,nextQuery.executionTime);
+			} catch (MailSendException ex) {
+				Thread.sleep(60000);
+				logger.info("SMTPSendFailedException", ex);
+				processedTime = emailservice.sendReport(nextQuery,data, nextQuery.mailSubject, nextQuery.templateName,
+						emails);
+				this.updateProcessedTime(nextQuery.id, processedTime, nextQuery.alertFrequency,nextQuery.executionTime);
+			}
+		}
+	}
+
+	private HashMap<String, ArrayList<HashMap>> setEmails(HashMap<String, ArrayList<HashMap>> data,
+			JsonQueryStructure jqs, String[] emails) {
+		HashMap email = new HashMap();
+		ArrayList<HashMap> list = new ArrayList<HashMap>();
+		if(emails.length != 0){
+			email.put("email_id", emails[0]);
+			list.add((HashMap) email);
+			data.put(jqs.name, list);
+		}
+		return data;
+	}
+
+	public void updateProcessedTime(Long queryId, Date processedTime, String alertFrequency,String executionTime) {
+			String[] time = executionTime.split(":");
+			Date dateNextExecute = processedTime;
+			dateNextExecute.setHours(Integer.valueOf(time[0]));
+			dateNextExecute.setMinutes(Integer.valueOf(time[1]));
+			dateNextExecute.setSeconds(Integer.valueOf(time[2]));
+			if (alertFrequency == "Weekly" || alertFrequency.equals("Weekly")) {
+				dateNextExecute = DateUtils.addDays(dateNextExecute, 7);
+				GenericQueries queryData = genericqueryrepo.findOne(queryId);
+				queryData.lastExecuted = processedTime;
+				queryData.nextExecution = dateNextExecute;
+				genericqueryrepo.save(queryData);
+			} else if (alertFrequency == "Daily" || alertFrequency.equals("Daily")) {
+				dateNextExecute = DateUtils.addDays(dateNextExecute, 1);
+				GenericQueries queryData = genericqueryrepo.findOne(queryId);
+				queryData.lastExecuted = processedTime;
+				queryData.nextExecution = dateNextExecute;
+				genericqueryrepo.save(queryData);
+			} else if (alertFrequency == "Monthly" || alertFrequency.equals("Monthly")) {
+				dateNextExecute = DateUtils.addDays(dateNextExecute, 30);
+				GenericQueries queryData = genericqueryrepo.findOne(queryId);
+				queryData.lastExecuted = processedTime;
+				queryData.nextExecution = dateNextExecute;
+				genericqueryrepo.save(queryData);
+			}
+	}
+
+	// feeds generator cron
+	// @Scheduled(fixedDelayString = "${rg.fixed.delay.prop}")
+	@Scheduled(cron = "0 0 21 * * *")
+	public void startFeedsGenerator() {
+		genericFeedsGenerator.cronJobForGeneratingFeeds();
+	}
+
+}
+

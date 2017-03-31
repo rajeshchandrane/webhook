@@ -1,0 +1,63 @@
+{
+"queries":[{
+"name":"totaljobcountdetails", 
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id,c.company_name,c.career_site_url,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount",
+"condition":"where c.id = j.company_id and c.id = ja.company_id and c.id = ? group by c.id"
+},
+{
+"name":"jobapplycountdetails",
+"from":"c3_job j,c3_job_application ja",
+"fields":"j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = 'Pending' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = ? group by j.id order by j.company_id"
+}]
+}
+
+
+select c.id,c.company_name,c.career_site_url,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount from c3_company c,c3_job j,c3_job_application ja where c.id = j.company_id and c.id = ja.company_id group by c.id
+
+select j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = 'Pending' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount from c3_job j,c3_job_application ja where j.id = ja.job_id and j.company_id = ja.company_id group by j.id order by j.company_id
+
+
+select * from (select c.id,c.company_name,c.career_site_url,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount from c3_company c,c3_job j,c3_job_application ja where c.id = j.company_id and c.id = ja.company_id group by c.id) as A 
+
+join
+
+(select j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = 'Pending' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount from c3_job j,c3_job_application ja where j.id = ja.job_id and j.company_id = ja.company_id group by j.id order by j.company_id) as B on A.id = B.company_id and B.company_id  = 0
+
+
+
+{
+"name":"fetchId",
+"from":"c3_company",
+"fields":"id",
+"condition":"where is_live = 1"
+}
+//////
+
+select j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a where a.job_id = id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date from c3_job j,c3_job_application ja,c3_company c where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = 1 group by j.id
+
+{
+"queries":[{
+"name":"companydetails",
+"from":"c3_company c",
+"fields":"c.id,c.company_name,c.domain_name",
+"condition":"where c.id = ?"},
+{
+"name":"companyjobdetails",
+"from":"c3_job j,c3_job_application ja,c3_company c",
+"fields":"j.id,j.job_title,j.location,(select coalesce(sum(a.no_of_view),0) from c3_job_log a where a.job_id = id  group by a.job_id) as jobViewCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount,j.job_url,j.created_date",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = ? group by j.id"
+}]
+}
+
+
+
+/home/Zwayam_Build/staging/Release/R6-19112016-13/rgproject/templates/mail/
+
+
+
+
+
+
+

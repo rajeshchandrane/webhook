@@ -1,0 +1,40 @@
+ALTER TABLE  `c3_company` ADD  `is_curated` TINYINT( 1 ) NOT NULL DEFAULT  '0' AFTER  `is_decomission` ;
+ALTER TABLE  `c3_company` ADD  `curatedby` VARCHAR( 64 ) NULL DEFAULT NULL AFTER  `is_curated` ;
+ALTER TABLE  `c3_company` ADD  `number_of_employees` INT( 10 ) NULL DEFAULT NULL AFTER  `curatedby` ;
+ALTER TABLE  `c3_company` ADD  `notes` TEXT NULL DEFAULT NULL AFTER  `number_of_employees` ;
+ALTER TABLE  `c3_company` ADD  `customer_support` VARCHAR( 64 ) NULL DEFAULT NULL AFTER  `notes` ;
+
+
+ALTER TABLE  `c3_company` DROP  `is_curated` ;
+ALTER TABLE  `c3_company` DROP `curatedby` ;
+ALTER TABLE  `c3_company` ADD  `sales_person` VARCHAR( 64 ) NULL AFTER  `number_of_employees` ;
+ALTER TABLE  `c3_company` ADD  `linkedin_id` VARCHAR( 128 ) NULL DEFAULT NULL AFTER  `customer_support` ;
+
+
+
+ALTER TABLE  `c3_job` ADD  `is_curated` TINYINT( 1 ) NOT NULL DEFAULT  '0' AFTER  `is_workflow_modified_by_user` ,
+ADD  `curatedby` VARCHAR( 64 ) NULL DEFAULT NULL AFTER  `is_curated` ;
+
+ALTER TABLE  `c3_job` ADD  `notes` TEXT NULL AFTER  `curatedby` ;
+ALTER TABLE  `c3_company` ADD  `sales_person` VARCHAR( 64 ) NULL AFTER  `number_of_employees` ;
+ALTER TABLE  `c3_company` ADD  `linkedin_id` VARCHAR( 128 ) NULL DEFAULT NULL AFTER  `customer_support` ;
+
+
+22/09/2016
+ALTER TABLE  `c3_job` ADD  `curated_date` DATETIME NULL DEFAULT NULL AFTER  `notes` ;
+
+30-10-2016
+CREATE TABLE `c3_event_report_log` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `event_type` varchar(255) DEFAULT NULL,
+  `new_data` varchar(1024) DEFAULT NULL,
+  `old_data` varchar(1024) DEFAULT NULL,
+  `loggedin_user_id` int(128) DEFAULT NULL,
+  `event_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_processed` tinyint(1) NOT NULL,
+  `processed_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `event_priority` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+ALTER TABLE  `c3_generic_queries` ADD  `entityQueryType` VARCHAR( 1024 ) NULL DEFAULT NULL AFTER  `templateName` ;

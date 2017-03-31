@@ -1,0 +1,61 @@
+Decomission.html
+{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_user.username,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ? and c3_user.id = ? group by c3_company.company_name"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = 'Emails on Delete Company'"
+}]
+}
+INSERT INTO `reportgenerator`.`rg_generic_queries` (`id`, `alertFrequency`, `executionTime`, `lastExecuted`, `mailSubject`, `nextExecution`, `query`, `queryType`, `templateName`, `entityQuery`) VALUES (NULL, 'N', NULL, NULL, 'Company $CompanyName$ has been Decommissioned', NULL, '{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_user.username,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ? and c3_user.id = ? group by c3_company.company_name"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = ''Emails on Delete Company''"
+}]
+}', 'Decomission', 'decomission', NULL);
+
+------------------------------------------------------------------------------------
+delete.html
+{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_user.username,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ? and c3_user.id = ? group by c3_company.company_name"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = 'Emails on Delete Company'"
+}]
+}
+INSERT INTO `reportgenerator`.`rg_generic_queries` (`id`, `alertFrequency`, `executionTime`, `lastExecuted`, `mailSubject`, `nextExecution`, `query`, `queryType`, `templateName`, `entityQuery`) VALUES (NULL, 'N', NULL, NULL, 'Company $CompanyName$ has been Deleted', NULL, '{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_user.username,c3_user.email_id",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = ? and c3_user.id = ? group by c3_company.company_name"},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = ''Emails on Delete Company''"
+}]
+}', 'Delete', 'delete', NULL);
+
+
+
+
+

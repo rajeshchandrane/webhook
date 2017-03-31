@@ -1,0 +1,63 @@
+/*$('#customerSupport').click(function() {
+	    $('#customerSupport').css('display', 'none');
+	    $('#customerSupport_edit')
+	        .val($('#customerSupport').text())
+	        .css('display', '')
+	        .focus();
+
+	});
+
+	$('#customerSupport_edit').blur(function() {
+	    $('#customerSupport_edit').css('display', 'none');
+	    $('#customerSupport')
+	        .text($('#customerSupport_edit').val())
+	        .css('display', '');
+	});
+	
+	$('#salesPerson').click(function() {
+	    $('#salesPerson').css('display', 'none');
+	    $('#salesPerson_edit')
+	        .val($('#salesPerson').text())
+	        .css('display', '')
+	        .focus();
+
+	});
+
+	$('#salesPerson_edit').blur(function() {
+	    $('#salesPerson_edit').css('display', 'none');
+	    $('#salesPerson')
+	        .text($('#salesPerson_edit').val())
+	        .css('display', '');
+	});
+	
+	$('#numberOfEmployees').click(function() {
+	    $('#numberOfEmployees').css('display', 'none');
+	    $('#numberOfEmployees_edit')
+	        .val($('#numberOfEmployees').text())
+	        .css('display', '')
+	        .focus();
+
+	});
+
+	$('#numberOfEmployees_edit').blur(function() {
+	    $('#numberOfEmployees_edit').css('display', 'none');
+	    $('#numberOfEmployees')
+	        .text($('#numberOfEmployees_edit').val())
+	        .css('display', '');
+	});
+	
+	$('#notes').click(function() {
+	    $('#notes').css('display', 'none');
+	    $('#notes_edit')
+	        .val($('#notes').text())
+	        .css('display', '')
+	        .focus();
+
+	});
+
+	$('#notes_edit').blur(function() {
+	    $('#notes_edit').css('display', 'none');
+	    $('#notes')
+	        .text($('#notes_edit').val())
+	        .css('display', '');
+	});*/

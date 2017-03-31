@@ -1,0 +1,144 @@
+-- ScienceHopper
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10799;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10799;
+
+-- Toyama Electric Ltd
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10800;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10800;
+
+-- ViCoast Solutions Pvt.Ltd
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10801;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10801;
+
+-- 7 Star Construction Company
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10802;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10802;
+
+-- iLeadership Technologies Pvt. Ltd.
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10803;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10803;
+
+-- Spark TG
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10804;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10804;
+
+-- Apex Multimedia
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10806;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10806;
+
+-- Hocalwire
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10807;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10807;
+
+-- ActorsApply
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10809;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10809;
+
+-- Round DEE Clock Corporate Solutions LLP
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10811;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10811;
+
+-- Pixelgenio Design Services
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10812;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10812;
+
+-- Dolphinesoft Technologies
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10813;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10813;
+
+-- Parikrama Senior Experiences
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10815;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10815;
+
+-- association for stimulating know how
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10824;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10824;
+
+-- SHAHNAZ GROUP OF COMPANIES
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10818;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10818;
+
+-- Accuprosys
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` = 10819;
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` = 10819;
+

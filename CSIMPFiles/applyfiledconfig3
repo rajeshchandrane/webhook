@@ -1,0 +1,83 @@
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (10798,10799,10796,10794,10790,10789,10788,10786,10785,10783,10781,10782,10780,10779);
+
+Elegant Solutions
+Temow IT Solutions Pvt Ltd
+Hubbler
+Hyperreality Technologies
+Vinfotek
+Appnomic Systems Pvt Ltd
+Genext Students Pvt. Ltd.
+Artisanal Gouri's Goodies
+ENBRAUN
+Edubridge Learning Pvt. Ltd.
+UX Business Solutions Pvt Ltd
+allwin industries
+Gembrill Technologies (I) Pvt Ltd
+LSM Shipmagement
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (10794,10755,10757,10759,10760,10762,10763,10764,10765,10766,10767,10768,10769,10770,10771,10772,10773,10775,10776,10777,10778);
+
+Uniglobe Grand Skies Travel Pvt Ltd
+Inteliment Software Technologies India Pvt.Ltd
+Multicore Technologies
+ACS Global Tech Solutions Pvt. Ltd.
+jensource india pvt ltd
+Quadsel systems pvt Ltd
+Etoos Education Pvt Ltd.
+Ajackus
+GEOMETRIX LASER SOLUTION PVT LTD
+Tridat India Pvt Ltd
+Onward Services
+Allure Travelseva Services Pvt Ltd
+RICHFEEL HEALTH & BEAUTY PVT.LTD
+Global Disbursement & Accounting Solutions Pvt Ltd
+Careerforce HR solutions
+Nixsol India
+Agile CRM
+Scientific Publishing Services
+RentSetGo
+ulpan or international
+Codelattice
+-------------------------------------------------------------------------
+
+Update `c3_apply_fields_configuration` set `field_order` = 2 WHERE `apply_field_id` = 1 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 3 WHERE `apply_field_id` = 2 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 4 WHERE `apply_field_id` = 3 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 5 WHERE `apply_field_id` = 4 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 6 WHERE `apply_field_id` = 5 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 1 WHERE `apply_field_id` = 6 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+Update `c3_apply_fields_configuration` set `field_order` = 14 WHERE `apply_field_id` = 14 and `company_id` in (10730,10732,10733,10734,10735,10736,10737,10738,10740,10741,10742,10743,10744,10746,10747,10750,10751,10752,10753);
+
+
+SocioSquare Digitech Private Limited
+Surekhas Technosoft
+Quapt Technologies Private Ltd
+Josh Technology Group
+Sylvester Tech
+IT Aspects
+MCS Geotech Pvt Ltd
+HGTechSolutions
+Atrics Technologies
+charpixel
+Synergy  Global Technologies Inc
+Deepraj Software Services Pvt. Ltd.
+Digimarketmoz
+SYE English Community
+Nativebag
+Archis Business Solutions Pvt. Ltd
+Fiables Solutions Pvt. Ltd.
+Roundpay
+
+

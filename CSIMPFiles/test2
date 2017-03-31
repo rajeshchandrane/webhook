@@ -1,0 +1,16 @@
+{
+"name":"fetchId",
+"from":"c3_job_log a, c3_job j,c3_company c",
+"fields":"c.id",
+"condition":"where a.job_id = j.id and c.id = j.company_id and c.is_live = 1 and j.status = 1 GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 5"
+}
+
+{
+"name":"fetchId",
+"from":"c3_job_log a, c3_job j,c3_company c,c3_user u",
+"fields":"c.id",
+"condition":"where a.job_id = j.id and c.id = j.company_id and u.company_id = c.id and c.is_live = 1 and j.status = 1 and u.email_id <> 'anonymous@staging.com' GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 5"
+}
+
+
+select c.id from c3_job_log a, c3_job j,c3_company c,c3_user u where a.job_id = j.id and c.id = j.company_id and u.company_id = c.id and c.is_live = 1 and j.status = 1 and u.email_id <> 'anonymous@staging.com' GROUP BY j.company_id  having COALESCE( SUM( a.no_of_view ) , 0 )  < 5;

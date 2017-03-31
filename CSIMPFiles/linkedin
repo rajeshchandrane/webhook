@@ -1,0 +1,11 @@
+select cast(j.created_date as Date), count(case when jb.linkedin = 2 then jb.id end) from c3_job j, c3_job_board_share jb where j.id = jb.job_id and j.created_date between (DATE_SUB(now(),interval 90 day)) and now() group by cast(j.created_date as Date) order by cast(j.created_date as Date)
+
+
+
+select distinct j.id,j.job_title,c.company_name,cast(j.created_date as Date),cast(a.log_date as Date),j.status,a.linkedin_view,a.linkedin_apply from c3_job j,c3_job_log a,c3_company c where j.id = a.job_id and c.id = j.company_id order by cast(j.created_date as Date)
+
+
+select a.job_id, a.log_date,coalesce(sum(a.no_of_view),0) from c3_job_log a  group by a.job_id, a.log_date
+
+
+

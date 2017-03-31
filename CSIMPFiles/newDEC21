@@ -1,0 +1,66 @@
+{
+"queries":[{
+"name":"totaljobcountdetails", 
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id,c.company_name,c.domain_name,count(distinct case when j.company_id = c.id then j.id end) as JobCount,count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) as JobAppCount",
+"condition":"where c.id = j.company_id and c.id = ja.company_id and c.id = $id$ group by c.id"
+},
+{
+"name":"jobapplycountdetails",
+"from":"c3_job j,c3_job_application ja",
+"fields":"j.company_id,j.id,j.job_title,j.location,count(distinct case when ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as applyCount,count(distinct case when ja.current_status = 'Pending' and ja.job_id = j.id and j.company_id = ja.company_id then ja.id end) as pendingCount",
+"condition":"where j.id = ja.job_id and j.company_id = ja.company_id and j.company_id = $id$ group by j.id order by j.company_id"
+}]
+}
+
+{
+"name":"conditionalQuery",
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id",
+"condition":"where c.is_live = 1 and c.id = j.company_id and c.id = ja.company_id having count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) >= 10 and c.id = $id$"
+}
+-----------------------------------------------
+{
+"name":"conditionalQuery",
+"from":"c3_company c,c3_job j,c3_job_application ja",
+"fields":"c.id",
+"condition":"where c.is_live = 1 and c.id = j.company_id and c.id = ja.company_id having count(distinct case when ja.company_id = c.id and c.id = j.company_id and ja.job_id = j.id then ja.id end) >= 10 and c.id = $id$"
+}
+' WHERE `rg_generic_queries`.`id` = 9;
+
+ALTER TABLE `rg_generic_queries`  ADD `fromEmail` VARCHAR(512) NULL AFTER `conditionalQuery`,  ADD `replyToEmail` VARCHAR(512) NULL AFTER `fromEmail`,  ADD `username` VARCHAR(1024) NULL AFTER `replyToEmail`,  ADD `password` VARCHAR(512) NULL AFTER `username`,  ADD `hostName` VARCHAR(512) NULL AFTER `password`,  ADD `protocol` VARCHAR(512) NULL AFTER `hostName`,  ADD `port` INT(10) NULL AFTER `protocol`;
+
+
+
+
+UPDATE `reportgenerator`.`rg_generic_queries` SET `fromEmail` = 'zwayamdigital123@gmail.com', `replyToEmail` = 'opendoors@zwayam.com', `username` = 'zwayamdigital123@gmail.com', `password` = 'zwayam@123', `hostName` = 'smtp.gmail.com', `protocol` = 'smtp', `port` = '587' WHERE `rg_generic_queries`.`id` = 12;
+
+UPDATE `reportgenerator`.`rg_generic_queries` SET `fromEmail` = 'rajeshchandrane@gmail.com', `replyToEmail` = 'opendoors@zwayam.com', `username` = 'rajeshchandrane@gmail.com', `password` = '7505RajU!@#', `hostName` = 'smtp.gmail.com', `protocol` = 'smtp', `port` = '587' WHERE `rg_generic_queries`.`id` = 13;
+
+UPDATE `rg_generic_queries` SET `query` = '{
+"queries":[{
+"name":"general",
+"from":"c3_company,c3_user",
+"fields":"c3_company.id,c3_company.company_name,c3_company.career_site_url,c3_company.website,c3_company.referrer,c3_user.username,c3_user.email_id,c3_user.phone_no",
+"condition":"where c3_company.id = c3_user.company_id and c3_company.id = $companyId$"
+},
+{
+"name":"emails",
+"from":"c3_configuration_system",
+"fields":"c3_configuration_system.configuration_value",
+"condition":"where c3_configuration_system.configuration_name = ''Emails to zwayam''"
+}]
+}' WHERE `rg_generic_queries`.`id` = 23;
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+INSERT INTO `ccube`.`c3_configuration_system` (`id`, `configuration_name`, `description`, `configuration_value`) VALUES (NULL, 'zwayam_DailyScoreReport_Emails', 'send daily scoring reports to zwayam based on the job applies', 'nithin@zwayam.com,rajesh@zwayam.com');
+
+
+
+
